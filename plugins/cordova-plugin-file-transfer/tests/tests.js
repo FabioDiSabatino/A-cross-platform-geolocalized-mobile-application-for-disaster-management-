@@ -32,24 +32,22 @@ exports.defineAutoTests = function () {
     var DEFAULT_FILESYSTEM_SIZE = 1024*50; //filesystem size in bytes
     var UNKNOWN_HOST = "http://foobar.apache.org";
     var HEADERS_ECHO = "http://whatheaders.com"; // NOTE: this site is very useful!
-    var DOWNLOAD_TIMEOUT = 30 * 1000; // download tests sometimes need a higher timeout to complete successfully
-    var UPLOAD_TIMEOUT = 30 * 1000; // upload tests sometimes need a higher timeout to complete successfully
+    var DOWNLOAD_TIMEOUT = 2 * 60 * 1000; // download tests sometimes need a higher timeout to complete successfully
+    var UPLOAD_TIMEOUT = 2 * 60 * 1000; // upload tests sometimes need a higher timeout to complete successfully
     var ABORT_DELAY = 100; // for abort() tests
 
     // config for upload test server
     // NOTE:
     //      more info at https://github.com/apache/cordova-labs/tree/cordova-filetransfer
-    var SERVER                  = "http://cordova-vm.apache.org:5000";
-    var SERVER_WITH_CREDENTIALS = "http://cordova_user:cordova_password@cordova-vm.apache.org:5000";
+    var SERVER                  = "http://cordova-filetransfer.jitsu.com";
+    var SERVER_WITH_CREDENTIALS = "http://cordova_user:cordova_password@cordova-filetransfer.jitsu.com";
 
     // flags
     var isWindows = cordova.platformId === 'windows8' || cordova.platformId === 'windows';
     var isWP8 = cordova.platformId === 'windowsphone';
-    var isIOS = cordova.platformId === 'ios';
 
     var isBrowser = cordova.platformId === 'browser';
     var isIE = isBrowser && navigator.userAgent.indexOf('Trident') >= 0;
-    var isWp8 = cordova.platformId === "windowsphone";
 
     describe('FileTransferError', function () {
 
@@ -177,8 +175,6 @@ exports.defineAutoTests = function () {
                 // In IE, when lengthComputable === false, event.total somehow is equal to 2^64
                 if (isIE) {
                     expect(event.total).toBe(Math.pow(2, 64));
-                } else if (isIOS) {
-                    expect(event.total).toBe(-1);
                 } else {
                     expect(event.total).toBe(0);
                 }
@@ -506,13 +502,6 @@ exports.defineAutoTests = function () {
                         expect(error.http_status).not.toBe(401, "Ensure " + fileURL + " is in the white list");
                         expect(error.http_status).toBe(404);
 
-                        // wp8 does not make difference between 404 and unknown host
-                        if (isWp8) {
-                            expect(error.code).toBe(FileTransferError.CONNECTION_ERR);
-                        } else {
-                            expect(error.code).toBe(FileTransferError.FILE_NOT_FOUND_ERR);
-                        }
-
                         done();
                     };
 
@@ -567,7 +556,7 @@ exports.defineAutoTests = function () {
                     transfer.onprogress = function () {};
 
                     transfer.download(fileURL, localFilePath, unexpectedCallbacks.httpWin, downloadFail);
-                }, DOWNLOAD_TIMEOUT);
+                }, 30000);
 
                 it("filetransfer.spec.16 should handle bad file path", function (done) {
                     var fileURL = SERVER;
@@ -816,7 +805,7 @@ exports.defineAutoTests = function () {
                     };
 
                     transfer.upload(localFilePath, fileURL, unexpectedCallbacks.httpWin, uploadFail, {});
-                }, UPLOAD_TIMEOUT);
+                }, 30000); // unknown host may need quite some time on some devices
 
                 it("filetransfer.spec.25 should handle missing file", function (done) {
 
@@ -977,11 +966,11 @@ exports.defineManualTests = function (contentEl, createActionButton) {
         file_transfer_tests;
 
     createActionButton('Download and display img (cdvfile)', function () {
-        downloadImg(imageURL, function (entry) { return entry.toInternalURL(); }, new Image());
+        downloadImg(imageURL, function (entry) { return entry.toURL(); }, new Image());
     }, 'cdv_image');
 
     createActionButton('Download and display img (native)', function () {
-        downloadImg(imageURL, function (entry) { return entry.toURL(); }, new Image());
+        downloadImg(imageURL, function (entry) { return entry.toNativeURL(); }, new Image());
     }, 'native_image');
 
     createActionButton('Download to a non-existent dir (should work)', function () {
@@ -991,12 +980,12 @@ exports.defineManualTests = function (contentEl, createActionButton) {
     createActionButton('Download and play video (cdvfile)', function () {
         var videoElement = document.createElement('video');
         videoElement.controls = "controls";
-        downloadImg(videoURL, function (entry) { return entry.toInternalURL(); }, videoElement);
+        downloadImg(videoURL, function (entry) { return entry.toURL(); }, videoElement);
     }, 'cdv_video');
 
     createActionButton('Download and play video (native)', function () {
         var videoElement = document.createElement('video');
         videoElement.controls = "controls";
-        downloadImg(videoURL, function (entry) { return entry.toURL(); }, videoElement);
+        downloadImg(videoURL, function (entry) { return entry.toNativeURL(); }, videoElement);
     }, 'native_video');
 };
