@@ -1,6 +1,6 @@
 
 $(document).ready(function(event){
-	var widget= new map();
+	var widget= new Cmap();
 	widget.init();
 })
 

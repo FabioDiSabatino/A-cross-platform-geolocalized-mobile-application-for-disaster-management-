@@ -1,6 +1,6 @@
 var map= function(){}
 
-map.prototype.init=function(){
+map.prototype.initMap=function(){
 	
 	var map = new L.map('map');
 
@@ -10,20 +10,20 @@ map.prototype.init=function(){
     onReady: function(){
     	map.addLayer(offlineLayer);
 		map.locate({ 
-    		watch:true,
+    		
     		setView:true,
-    		maxZoom:13
+    		maxZoom:16
     	});
     	
 
     },
-    onError: function(){window.alert('errore..')},
+    onError: function(){console.log('errore..')},
     storeName:"myStoreName",
-    dbOption:"WebSQL"   
+    dbOption:"IndexedDB"   
 	});
 
 
-	/*************************************************/
+
 
 	
 	
@@ -41,23 +41,18 @@ map.prototype.init=function(){
 
 
 function onLocationFound(e) {
+	console.log('posizione individuata...')
      L.marker(e.latlng,{icon:blueMarker}).addTo(map);
-     offlineLayer.saveTiles(13,function(){ window.alert('salvataggio in corso..')},function(){window.alert('salvataggio completato!')},function(){window.alert('errore..')})
-    
-   
-    
+     offlineLayer.saveTiles(16,function(){ console.log('salvataggio in corso..')},
+    		 function(){console.log('salvataggio completato!')},
+    		 function(){console.log('errore!')})  
+};
+function onLocationError(e) {
+	alert(e.message);
 };
 
-
 map.on('locationfound', onLocationFound);
-
-
-		function onLocationError(e) {
-			alert(e.message);
-		};
-
-		
-		map.on('locationerror', onLocationError);
+map.on('locationerror', onLocationError);
 
 		
 
