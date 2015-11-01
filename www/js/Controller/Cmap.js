@@ -1,6 +1,6 @@
-var map= function(){}
+var Cmap= function(){}
 
-map.prototype.initMap=function(){
+Cmap.prototype.initMap=function(){
 	
 	var map = new L.map('map');
 
