@@ -2,6 +2,8 @@ var Cmap= function(){}
 
 Cmap.prototype.initMap=function(){	
 	var singleton= new Singleton();
+	var cdevice=singleton.getInstance(Cdevice,"Cdevice");
+	
 	var map = new L.map('map');
 
 	var offlineLayer= new OfflineLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
@@ -56,7 +58,7 @@ map.on('locationerror', onLocationError);
 $( window ).on( "orientationchange", function( event ) {
 	
 	var vmap=singleton.getInstance(Vmap,"Vmap");
-	var cdevice=singleton.getInstance(Cdevice,"Cdevice");
+
 	var infodevice=cdevice.getInfo();
 	vmap.setMapContainer(infodevice);
 })
