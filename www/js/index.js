@@ -1,6 +1,7 @@
 
 $(document).ready(function(event){
-	var widget= new Cmap();
-	widget.initMap();
+	var singleton=new Singleton();
+	var widget=singleton.getInstance(Chome,"Chome");
+	widget.init();
 })
 

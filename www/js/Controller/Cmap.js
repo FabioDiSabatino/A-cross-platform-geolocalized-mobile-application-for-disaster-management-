@@ -1,7 +1,7 @@
 var Cmap= function(){}
 
-Cmap.prototype.initMap=function(){
-	
+Cmap.prototype.initMap=function(){	
+	var singleton= new Singleton();
 	var map = new L.map('map');
 
 	var offlineLayer= new OfflineLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
@@ -9,17 +9,16 @@ Cmap.prototype.initMap=function(){
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     onReady: function(){
     	map.addLayer(offlineLayer);
-		map.locate({ 
-    		
+		map.locate({     		
     		setView:true,
     		maxZoom:16
     	});
     	
 
     },
-    onError: function(){console.log('errore..')},
-    storeName:"myStoreName",
-    dbOption:"IndexedDB"   
+    onError: function(){console.log('errore db')},
+    storeName:"myStoreName", 
+    dbOption:"IndexedDB"   // controllare compatibilità!!
 	});
 
 
@@ -53,6 +52,14 @@ function onLocationError(e) {
 
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
+
+$( window ).on( "orientationchange", function( event ) {
+	
+	var vmap=singleton.getInstance(Vmap,"Vmap");
+	var cdevice=singleton.getInstance(Cdevice,"Cdevice");
+	var infodevice=cdevice.getInfo();
+	vmap.setMapContainer(infodevice);
+})
 
 		
 
