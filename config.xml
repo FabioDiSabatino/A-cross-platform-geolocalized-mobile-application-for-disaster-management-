@@ -4,7 +4,6 @@
     <description>HelpMe è un applicazione per la geolocalizzazione e la segnalazione di emergenze in situazioni di catastrofi naturali</description>
     <author email="fabio.disabatino@hotmail.it" href="">Fabio Di Sabatino</author>
     <content src="index.html" />
-    <preference name="phonegap-version" value="3.7.0" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
@@ -13,7 +12,7 @@
     <preference name="prerendered-icon" value="true" />
     <preference name="stay-in-webview" value="false" />
     <preference name="ios-statusbarstyle" value="black-opaque" />
-    <preference name="detect-data-types" value="true" />
+    <preference name="detect-data-types" value="true" ></preference>
     <preference name="exit-on-suspend" value="false" />
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="auto-hide-splash-screen" value="true" />
