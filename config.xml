@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>toy5_leaflet_offline_dynamic</name>
-    <description>
-        Hello World sample application that responds to the deviceready event.
-    </description>
-    <author email="" href="http://phonegap.com">
-        PhoneGap Team
-    </author>
+    <name>HelpMe</name>
+    <description>HelpMe è un applicazione per la geolocalizzazione e la segnalazione di emergenze in situazioni di catastrofi naturali</description>
+    <author email="fabio.disabatino@hotmail.it" href="">Fabio Di Sabatino</author>
     <content src="index.html" />
     <preference name="phonegap-version" value="3.7.0" />
     <preference name="permissions" value="none" />
