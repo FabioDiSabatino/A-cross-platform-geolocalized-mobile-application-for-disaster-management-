@@ -58,10 +58,10 @@ map.on('locationerror', onLocationError);
 $( window ).on( "orientationchange", function( event ) {
 	
 	var vmap=singleton.getInstance(Vmap,"Vmap");
-
 	var infodevice=cdevice.getInfo();
 	vmap.setMapContainer(infodevice);
 })
+
 
 		
 
