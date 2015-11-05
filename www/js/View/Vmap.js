@@ -1,7 +1,7 @@
 var Vmap=function(){}
 
 Vmap.prototype.setMapContainer=function(deviceinfo){
-	
+	alert("gfhgj");
 	$("body").css({
 		"height":deviceinfo.height,
 		"width":deviceinfo.width	

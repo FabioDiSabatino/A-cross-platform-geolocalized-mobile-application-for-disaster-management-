@@ -4,7 +4,9 @@ body
 	overflow:hidden;
 	
 }
-
+.mapcontainer{
+	height:80%;
+}
 #map{
 height: 100%;
 width: 100%;
