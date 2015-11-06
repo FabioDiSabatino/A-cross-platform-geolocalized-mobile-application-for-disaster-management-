@@ -1,10 +1,10 @@
 var Vmap=function(){}
 
 Vmap.prototype.setMapContainer=function(deviceinfo){
-	alert("gfhgj");
+	
 	$("body").css({
 		"height":deviceinfo.height,
-		"width":deviceinfo.width	
+		"width":deviceinfo.width
 		
 	});
 	$(".mapContainer").css({
@@ -17,8 +17,6 @@ Vmap.prototype.setMapContainer=function(deviceinfo){
 		"width":deviceinfo.width	
 		
 	})
-	
-
 	
 	console.log(deviceinfo);
 	
