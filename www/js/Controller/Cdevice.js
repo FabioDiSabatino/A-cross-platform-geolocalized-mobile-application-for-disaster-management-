@@ -7,8 +7,8 @@ var Cdevice= function(){}
 Cdevice.prototype.getInfo= function(){
 	var info={
 			ratio:window.devicePixelRatio,
-			height:window.devicePixelRatio*screen.height,
-			width:window.devicePixelRatio*screen.width
+			height:screen.height/window.devicePixelRatio,
+			width:screen.width/window.devicePixelRatio
 			
 	}
 	return info;
