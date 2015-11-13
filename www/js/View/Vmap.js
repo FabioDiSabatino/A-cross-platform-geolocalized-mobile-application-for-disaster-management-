@@ -18,7 +18,7 @@ Vmap.prototype.setMapContainer=function(deviceinfo){
 		
 	})
 	
-	console.log(deviceinfo);
+	
 	
 }
 

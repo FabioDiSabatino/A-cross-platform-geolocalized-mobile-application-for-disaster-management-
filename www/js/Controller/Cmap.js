@@ -2,8 +2,7 @@ var Cmap= function(){}
 
 Cmap.prototype.initMap=function(){	
 	var singleton= new Singleton();
-	var cdevice=singleton.getInstance(Cdevice,"Cdevice");
-	
+	var cdevice=singleton.getInstance(Cdevice,"Cdevice");	
 	var map = new L.map('map');
 
 	var offlineLayer= new OfflineLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
@@ -11,16 +10,18 @@ Cmap.prototype.initMap=function(){
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     onReady: function(){
     	map.addLayer(offlineLayer);
-		map.locate({     		
+		map.locate({
+			watch:true,
     		setView:true,
-    		maxZoom:16
+    		maxZoom:16,
+    		enableHighAccuracy:true
     	});
     	
 
     },
     onError: function(){console.log('errore db')},
-    storeName:"myStoreName", 
-    dbOption:"IndexedDB"   // controllare compatibilità!!
+    storeName:"LocalTiles", 
+    dbOption:"IndexedDB"   
 	});
 
 
@@ -44,18 +45,18 @@ Cmap.prototype.initMap=function(){
 function onLocationFound(e) {
 	console.log('posizione individuata...')
      L.marker(e.latlng,{icon:blueMarker}).addTo(map);
-     offlineLayer.saveTiles(16,function(){ console.log('salvataggio in corso..')},
+     offlineLayer.saveTiles(17,function(){ console.log('salvataggio in corso..')},
     		 function(){console.log('salvataggio completato!')},
     		 function(){console.log('errore!')})  
 };
 function onLocationError(e) {
-	alert(e.message);
+	cordova.dialogGPS();
 };
 
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
 
-$( window ).on( "orientationchange", function( event ) {
+$(window ).on( "orientationchange", function( event ) {
 	
 	var vmap=singleton.getInstance(Vmap,"Vmap");
 	var infodevice=cdevice.getInfo();
