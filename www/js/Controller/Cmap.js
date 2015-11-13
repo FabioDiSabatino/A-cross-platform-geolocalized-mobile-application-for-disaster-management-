@@ -50,7 +50,7 @@ function onLocationFound(e) {
     		 function(){console.log('errore!')})  
 };
 function onLocationError(e) {
-	new cordova.plugins.diagnostic.switchToLocationSettings();
+	cordova.plugins.diagnostic.switchToLocationSettings();
 };
 
 map.on('locationfound', onLocationFound);
