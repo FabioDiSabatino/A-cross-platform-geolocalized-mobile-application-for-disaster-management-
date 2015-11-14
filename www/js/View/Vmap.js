@@ -8,15 +8,11 @@ Vmap.prototype.setMapContainer=function(deviceinfo){
 		
 	});
 	$(".mapContainer").css({
-		"height":(deviceinfo.height/100)*80,
+		"height":deviceinfo.height,
 		"width":deviceinfo.width	
 		
 	});
-	$("#prova").css({
-		"height":(deviceinfo.height/100)*20,
-		"width":deviceinfo.width	
-		
-	})
+	
 	
 	
 	

@@ -4,6 +4,9 @@ Cmap.prototype.initMap=function(){
 	var singleton= new Singleton();
 	var cdevice=singleton.getInstance(Cdevice,"Cdevice");	
 	var map = new L.map('map');
+	var infodevice=cdevice.getInfo();
+	
+	console.log(cdevice.getInfo());
 
 	var offlineLayer= new OfflineLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
 	{
@@ -50,8 +53,14 @@ function onLocationFound(e) {
     		 function(){console.log('errore!')})  
 };
 function onLocationError(e) {
-	new cordova.dialogGPS();
-	//cordova.plugins.diagnostic.switchToLocationSettings();
+	if(infodevice.platform=='android')
+		cordova.plugins.diagnostic.switchToLocationSettings();
+	else if (infodevice.platform=='iOS')
+		{cordova.plugins.diagnostic.switchToSettings(function(){
+		    console.log("Successfully switched to Settings app")
+		}, function(error){
+		    console.error("The following error occurred: "+error)
+		    })}
 };
 
 map.on('locationfound', onLocationFound);
@@ -60,7 +69,7 @@ map.on('locationerror', onLocationError);
 $(window ).on( "orientationchange", function( event ) {
 	
 	var vmap=singleton.getInstance(Vmap,"Vmap");
-	var infodevice=cdevice.getInfo();
+	 infodevice=cdevice.getInfo();
 	vmap.setMapContainer(infodevice);
 })
 
