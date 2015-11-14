@@ -53,7 +53,7 @@ function onLocationFound(e) {
     		 function(){console.log('errore!')})  
 };
 function onLocationError(e) {
-	if(infodevice.platform=='android')
+	if(infodevice.platform=='Android')
 		cordova.plugins.diagnostic.switchToLocationSettings();
 	else if (infodevice.platform=='iOS')
 		{cordova.plugins.diagnostic.switchToSettings(function(){
