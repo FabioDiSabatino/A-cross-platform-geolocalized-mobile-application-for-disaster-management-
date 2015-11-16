@@ -11,7 +11,7 @@ Cdevice.prototype.getInfo= function(){
 			ratio:window.devicePixelRatio, //ancomment when build 
 			height:screen.height/window.devicePixelRatio,
 			width:screen.width/window.devicePixelRatio,
-			platform:window.device.platform,
+			platform:"Android"
 			orientation:window.orientation
 			
 	}
