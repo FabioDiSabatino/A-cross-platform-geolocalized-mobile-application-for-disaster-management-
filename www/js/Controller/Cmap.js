@@ -79,7 +79,7 @@ Cmap.prototype.initMap=function(){
     onError: function(){console.log('errore db')},
     storeName:"LocalTiles", 
     dbOption:"IndexedDB"   
-	});
+	})
 	
 	
 }
