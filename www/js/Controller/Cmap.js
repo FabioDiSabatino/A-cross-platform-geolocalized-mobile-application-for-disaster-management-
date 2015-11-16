@@ -10,7 +10,7 @@ Cmap.prototype.initMap=function(){
 	var myPosition;	
 	var boolean="true";
 	console.log(cdevice.getInfo());
-	vmap.setMapContainer(infodevice);
+
 	
 
 	var offlineLayer= new OfflineLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
