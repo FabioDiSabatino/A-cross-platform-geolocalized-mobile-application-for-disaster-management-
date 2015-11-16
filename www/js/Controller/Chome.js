@@ -7,8 +7,7 @@ Chome.prototype.init=function(){
 	var vmap=singleton.getInstance(Vmap,"Vmap");
 	var cdevice= singleton.getInstance(Cdevice,"Cdevice");
 	
-	
-	var deviceinfo=cdevice.getInfo();
+	deviceinfo=cdevice.getInfo();
 	vmap.setMapContainer(deviceinfo);
 	cmap.initMap();
 	
