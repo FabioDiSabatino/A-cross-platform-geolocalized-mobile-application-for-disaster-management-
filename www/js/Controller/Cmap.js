@@ -21,7 +21,7 @@ Cmap.prototype.initMap=function(){
 		map.locate({
 			watch:true,
     		enableHighAccuracy:true,
-    		timeout:4000
+    		timeout:10000
     		
     	});
 		var blueMarker = L.icon({
