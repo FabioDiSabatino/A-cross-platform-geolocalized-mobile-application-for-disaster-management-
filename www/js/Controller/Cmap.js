@@ -7,6 +7,7 @@ Cmap.prototype.initMap=function(){
 	var map = new L.map('map');
 	var infodevice=cdevice.getInfo();	
 	var myPosition;	
+	var boolean="true";
 	console.log(cdevice.getInfo());
 
 	var offlineLayer= new OfflineLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
@@ -72,7 +73,7 @@ Cmap.prototype.initMap=function(){
 	map.on('locationerror', onLocationError);
 
 	$(window ).on( "orientationchange", function( event ) {
-	    var vmap=singleton.getInstance(Vmap,"Vmap");
+	    var vmap=singleton.getInstance(Vmap,"Vmap");	   
 		infodevice=cdevice.getInfo();
 		vmap.setMapContainer(infodevice);
 	})
