@@ -3,12 +3,15 @@ var Cmap=function(){}
 
 Cmap.prototype.initMap=function(){	
 	var singleton= new Singleton();
-	var cdevice=singleton.getInstance(Cdevice,"Cdevice");	
+	var cdevice=singleton.getInstance(Cdevice,"Cdevice");
+	var vmap=singleton.getInstance(Vmap,"Vmap");	   
 	var map = new L.map('map');
 	var infodevice=cdevice.getInfo();	
 	var myPosition;	
 	var boolean="true";
 	console.log(cdevice.getInfo());
+	vmap.setMapContainer(infodevice);
+	
 
 	var offlineLayer= new OfflineLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
 	{
