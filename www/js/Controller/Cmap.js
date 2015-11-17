@@ -1,5 +1,10 @@
 var Cmap=function(){}
 
+Cmap.prototype.changeLocation=function(evento){
+	
+	console.log(evento.speed)
+
+}
 
 Cmap.prototype.initMap=function(){	
 	var singleton= new Singleton();
@@ -19,7 +24,7 @@ Cmap.prototype.initMap=function(){
 		map.locate({
 			watch:true,
     		enableHighAccuracy:true,
-    		timeout:10000
+    		timeout:4000
     		
     	});
 		
@@ -44,18 +49,23 @@ Cmap.prototype.initMap=function(){
 
 	function onLocationFound(e) {
 		
-		console.log('posizione individuata...');		
+		console.log('posizione individuata...');	
+		
 		if(typeof myPosition !== "undefined")
 			{
-			console.log('cancello il vecchio marker..');
-			map.removeLayer(myPosition);
+			 $("#velocita").text("velocità:"+(e.speed*3.6));
+			 console.log('cancello il vecchio marker..');
+			 map.removeLayer(myPosition);
 			}
 		else	
 	     {
-	     map.setView(e.latlng,16);
-	     offlineLayer.saveTiles(17,function(){ console.log('salvataggio in corso..')},
-	    		 function(){console.log('salvataggio completato!')},
-	    		 function(){console.log('errore!')});
+			
+		     
+			  map.setView(e.latlng,16);
+		      offlineLayer.saveTiles(17,function(){ console.log('salvataggio in corso..')},
+		    		 function(){console.log('salvataggio completato!')},
+		    		 function(){console.log('errore!')});
+		     
 	    }	     
 	  myPosition= L.marker(e.latlng,{icon:blueMarker}).addTo(map)	
 	};
@@ -85,5 +95,8 @@ Cmap.prototype.initMap=function(){
 	
 	
 }
+
+
+
 
 

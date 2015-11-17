@@ -28,10 +28,19 @@ Vmap.prototype.setMapContainer=function(deviceinfo){
 	
 	
 	$(".mapContainer").css({
-			"height":height,
-			"width":width,	
+			"height":(height/100)*60,
+			"width":width
 			
 		});
+
+	$("#velocita").css({
+			"height":(height/100)*40,
+			"width":width,	
+			"border-top":"black"
+			
+		});
+	
+	
 		
 	if(deviceinfo.platform == "iOS")
 		{$(".mapcontainer").css({
