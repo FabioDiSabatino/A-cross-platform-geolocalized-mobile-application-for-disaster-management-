@@ -13,11 +13,11 @@ initMap:function(){
 	{
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors Tiles © HOT ',
     onReady: function(){
-    	
+    	map.addLayer(offlineLayer);
 		map.locate({
 			watch:true,
     		enableHighAccuracy:true,
-    		timeout:4000
+    		timeout:10000
     		
     	});
 		
@@ -27,7 +27,7 @@ initMap:function(){
     onError: function(){console.log('errore db')},
     storeName:"LocalTiles", 
     dbOption:"IndexedDB"   
-	}).addTo(map);
+	});
 	
 	var blueMarker = L.icon({
         iconUrl: './img/marker-icon.png',
