@@ -3,27 +3,28 @@ var cmap={
 
 initMap:function(){	
 	
-	
 	var map = new L.map('map');
 	var infodevice=cdevice.getInfo();	
 	var myPosition;	
 	
-
+	map.on('layeradd',function(){console.log('layer aggiunto')});
+	
 	var offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', 
 	{
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors Tiles © HOT ',
     onReady: function(){
-    	map.addLayer(offlineLayer);
-		map.locate({
-			watch:true,
-    		enableHighAccuracy:true,
-    		timeout:10000
-    		
-    	});
+    	
     },
     onError: function(){console.log('errore db')},
     storeName:"LocalTiles", 
     dbOption:"IndexedDB"   
+	}).addTo(map);
+	
+	map.locate({
+		watch:true,
+		enableHighAccuracy:true,
+		timeout:10000
+		
 	});
 	
 	var blueMarker = L.icon({

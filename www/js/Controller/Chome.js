@@ -4,6 +4,6 @@ init:function(){
 	
 	deviceinfo=cdevice.getInfo();
 	vmap.setMapContainer(deviceinfo);
-	$(document).ready(function(){cmap.initMap()});
+	cmap.initMap();
 	}
 }
