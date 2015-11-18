@@ -1,9 +1,7 @@
-$(document).ready(function(){
-	document.addEventListener("deviceready",function(){
-		
+document.addEventListener("deviceready",function(){
 		chome.init();
 	
 	
-	}, false)})
+	}, false)
 
 
