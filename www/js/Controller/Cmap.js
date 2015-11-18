@@ -20,9 +20,6 @@ initMap:function(){
     		timeout:10000
     		
     	});
-		
-    	
-
     },
     onError: function(){console.log('errore db')},
     storeName:"LocalTiles", 
