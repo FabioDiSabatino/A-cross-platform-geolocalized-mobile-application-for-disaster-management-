@@ -9,11 +9,11 @@ initMap:function(){
 	var myPosition;	
 	
 
-	var offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+	var offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', 
 	{
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors Tiles © HOT ',
     onReady: function(){
-    	map.addLayer(offlineLayer);
+    	
 		map.locate({
 			watch:true,
     		enableHighAccuracy:true,
@@ -27,7 +27,7 @@ initMap:function(){
     onError: function(){console.log('errore db')},
     storeName:"LocalTiles", 
     dbOption:"IndexedDB"   
-	});
+	}).addTo(map);
 	
 	var blueMarker = L.icon({
         iconUrl: './img/marker-icon.png',
