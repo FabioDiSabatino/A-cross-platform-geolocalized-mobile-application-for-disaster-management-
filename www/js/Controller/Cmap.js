@@ -1,10 +1,5 @@
 var cmap={
 
-changeLocation:function(evento){
-	
-	console.log(evento);
-
-},
 
 initMap:function(){	
 	
@@ -16,7 +11,7 @@ initMap:function(){
 
 	var offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', 
 	{
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors Tiles © HOT ',
     onReady: function(){
     	map.addLayer(offlineLayer);
 		map.locate({
@@ -46,20 +41,18 @@ initMap:function(){
     });
 
 	function onLocationFound(e) {
-		var functioname='onLocationFound';
-		console.log('posizione individuata...');
-		cmap.changeLocation(e);			
+	
+					
 		if(typeof myPosition !== "undefined")
 			{
-			
-			 
-			 console.log('cancello il vecchio marker..');
+			 var speed= e.speed*3.6;
+			 var zoom=map.getZoom();
+			 if(speed>20)
+				 map.setView(e.latlng,zoom);
 			 map.removeLayer(myPosition);
 			}
 		else	
-	     {
-			
-		     
+	     {		     
 			  map.setView(e.latlng,16);
 		      offlineLayer.saveTiles(17,function(){ console.log('salvataggio in corso..')},
 		    		 function(){console.log('salvataggio completato!')},
@@ -94,7 +87,7 @@ initMap:function(){
 
 	
 	
-}
+  }
 }
 
 

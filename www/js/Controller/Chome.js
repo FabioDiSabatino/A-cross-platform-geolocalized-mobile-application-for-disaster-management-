@@ -1,13 +1,9 @@
-var Chome= function(){}
-
-Chome.prototype.init=function(){
+var chome={
+init:function(){
 	/** init gli object fondamentali **/
 	
 	deviceinfo=cdevice.getInfo();
 	vmap.setMapContainer(deviceinfo);
 	cmap.initMap();
-	
-	
-	
-	
+	}
 }
