@@ -9,9 +9,9 @@ initMap:function(){
 	var myPosition;	
 	
 
-	var offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', 
+	var offlineLayer= new OfflineLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
 	{
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors Tiles © HOT ',
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>  ',
     onReady: function(){
     	map.addLayer(offlineLayer);
 		map.locate({
