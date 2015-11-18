@@ -1,22 +1,20 @@
-var Cmap=function(){}
+var cmap={
 
-Cmap.prototype.changeLocation=function(evento){
+changeLocation:function(evento){
 	
-	console.log(evento.speed)
+	console.log(evento);
 
-}
+},
 
-Cmap.prototype.initMap=function(){	
-	var singleton= new Singleton();
-	var cdevice=singleton.getInstance(Cdevice,"Cdevice");
-	var vmap=singleton.getInstance(Vmap,"Vmap");	   
+initMap:function(){	
+	
+	
 	var map = new L.map('map');
 	var infodevice=cdevice.getInfo();	
 	var myPosition;	
-	var boolean="true";
-	console.log(cdevice.getInfo());
+	
 
-	var offlineLayer= new OfflineLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
+	var offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', 
 	{
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     onReady: function(){
@@ -48,12 +46,13 @@ Cmap.prototype.initMap=function(){
     });
 
 	function onLocationFound(e) {
-		
-		console.log('posizione individuata...');	
-		
+		var functioname='onLocationFound';
+		console.log('posizione individuata...');
+		cmap.changeLocation(e);			
 		if(typeof myPosition !== "undefined")
 			{
-			 $("#velocita").text("velocità:"+(e.speed*3.6));
+			
+			 
 			 console.log('cancello il vecchio marker..');
 			 map.removeLayer(myPosition);
 			}
@@ -87,13 +86,15 @@ Cmap.prototype.initMap=function(){
 	map.on('locationerror', onLocationError);
 
 	$(window ).on( "orientationchange", function( event ) {
-	    var vmap=singleton.getInstance(Vmap,"Vmap");	   
+	    	   
 		infodevice=cdevice.getInfo();
 		vmap.setMapContainer(infodevice);
-	})
+	});
+	
 
 	
 	
+}
 }
 
 
