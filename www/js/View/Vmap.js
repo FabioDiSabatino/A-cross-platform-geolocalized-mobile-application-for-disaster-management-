@@ -1,9 +1,6 @@
-var vmap={
+var Vmap=function(){}
 
-setMapContainer:function(deviceinfo){
-	
-	
-	
+Vmap.prototype.setMapContainer=function(deviceinfo){
 	if(deviceinfo.platform =="iOS")
 	  {if(deviceinfo.orientation =="0" || deviceinfo.orientation =="180")
 		{var height=deviceinfo.height;
@@ -31,12 +28,18 @@ setMapContainer:function(deviceinfo){
 	
 	
 	$(".mapContainer").css({
-			"height":height,
+			"height":(height/100)*60,
 			"width":width
 			
 		});
 
-
+	$("#velocita").css({
+			"height":(height/100)*40,
+			"width":width,	
+			"border-top":"black"
+			
+		});
+	
 	
 		
 	if(deviceinfo.platform == "iOS")
@@ -50,6 +53,5 @@ setMapContainer:function(deviceinfo){
 	
 	
 	
-    }
 }
 

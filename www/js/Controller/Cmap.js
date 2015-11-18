@@ -1,30 +1,39 @@
-var cmap={
+var Cmap=function(){}
 
-
-initMap:function(){	
+Cmap.prototype.changeLocation=function(evento){
 	
+	console.log(evento.speed)
+
+}
+
+Cmap.prototype.initMap=function(){	
+	var singleton= new Singleton();
+	var cdevice=singleton.getInstance(Cdevice,"Cdevice");
+	var vmap=singleton.getInstance(Vmap,"Vmap");	   
 	var map = new L.map('map');
 	var infodevice=cdevice.getInfo();	
 	var myPosition;	
-	
-	map.on('layeradd',function(){console.log('layer aggiunto')});
-	
-	var offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', 
+	var boolean="true";
+	console.log(cdevice.getInfo());
+
+	var offlineLayer= new OfflineLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
 	{
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors Tiles © HOT ',
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
     onReady: function(){
+    	map.addLayer(offlineLayer);
+		map.locate({
+			watch:true,
+    		enableHighAccuracy:true,
+    		timeout:4000
+    		
+    	});
+		
     	
+
     },
     onError: function(){console.log('errore db')},
     storeName:"LocalTiles", 
     dbOption:"IndexedDB"   
-	}).addTo(map);
-	
-	map.locate({
-		watch:true,
-		enableHighAccuracy:true,
-		timeout:10000
-		
 	});
 	
 	var blueMarker = L.icon({
@@ -39,18 +48,19 @@ initMap:function(){
     });
 
 	function onLocationFound(e) {
-	
-					
+		
+		console.log('posizione individuata...');	
+		
 		if(typeof myPosition !== "undefined")
 			{
-			 var speed= e.speed*3.6;
-			 var zoom=map.getZoom();
-			 if(speed>20)
-				 map.setView(e.latlng,zoom);
+			 $("#velocita").text("velocità:"+(e.speed*3.6));
+			 console.log('cancello il vecchio marker..');
 			 map.removeLayer(myPosition);
 			}
 		else	
-	     {		     
+	     {
+			
+		     
 			  map.setView(e.latlng,16);
 		      offlineLayer.saveTiles(17,function(){ console.log('salvataggio in corso..')},
 		    		 function(){console.log('salvataggio completato!')},
@@ -77,15 +87,13 @@ initMap:function(){
 	map.on('locationerror', onLocationError);
 
 	$(window ).on( "orientationchange", function( event ) {
-	    	   
+	    var vmap=singleton.getInstance(Vmap,"Vmap");	   
 		infodevice=cdevice.getInfo();
 		vmap.setMapContainer(infodevice);
-	});
-	
+	})
 
 	
 	
-  }
 }
 
 
