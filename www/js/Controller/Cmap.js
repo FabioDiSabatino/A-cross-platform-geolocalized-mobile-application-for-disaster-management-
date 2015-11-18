@@ -1,40 +1,33 @@
-var Cmap=function(){}
+var cmap={
 
-Cmap.prototype.changeLocation=function(evento){
+
+initMap:function(){	
 	
-	console.log(evento.speed)
-
-}
-
-Cmap.prototype.initMap=function(){	
-	var singleton= new Singleton();
-	var cdevice=singleton.getInstance(Cdevice,"Cdevice");
-	var vmap=singleton.getInstance(Vmap,"Vmap");	   
 	var map = new L.map('map');
 	var infodevice=cdevice.getInfo();	
 	var myPosition;	
-	var boolean="true";
-	console.log(cdevice.getInfo());
-
-	var offlineLayer= new OfflineLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
+	
+	
+	
+	var offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', 
 	{
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors Tiles © HOT ',
     onReady: function(){
     	map.addLayer(offlineLayer);
-		map.locate({
-			watch:true,
+    	map.locate({
+    		watch:true,
     		enableHighAccuracy:true,
-    		timeout:4000
+    		timeout:10000
     		
     	});
-		
     	
-
     },
     onError: function(){console.log('errore db')},
     storeName:"LocalTiles", 
     dbOption:"IndexedDB"   
 	});
+	
+	
 	
 	var blueMarker = L.icon({
         iconUrl: './img/marker-icon.png',
@@ -48,19 +41,18 @@ Cmap.prototype.initMap=function(){
     });
 
 	function onLocationFound(e) {
-		
-		console.log('posizione individuata...');	
-		
+	
+					
 		if(typeof myPosition !== "undefined")
 			{
-			 $("#velocita").text("velocità:"+(e.speed*3.6));
-			 console.log('cancello il vecchio marker..');
+			 var speed= e.speed*3.6;
+			 var zoom=map.getZoom();
+			 if(speed>20)
+				 map.setView(e.latlng,zoom);
 			 map.removeLayer(myPosition);
 			}
 		else	
-	     {
-			
-		     
+	     {		     
 			  map.setView(e.latlng,16);
 		      offlineLayer.saveTiles(17,function(){ console.log('salvataggio in corso..')},
 		    		 function(){console.log('salvataggio completato!')},
@@ -87,13 +79,15 @@ Cmap.prototype.initMap=function(){
 	map.on('locationerror', onLocationError);
 
 	$(window ).on( "orientationchange", function( event ) {
-	    var vmap=singleton.getInstance(Vmap,"Vmap");	   
+	    	   
 		infodevice=cdevice.getInfo();
 		vmap.setMapContainer(infodevice);
-	})
+	});
+	
 
 	
 	
+  }
 }
 
 

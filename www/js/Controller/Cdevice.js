@@ -2,12 +2,11 @@
  * 	come dimensione, stato ect ...
  */
 
-var Cdevice= function(){
+var cdevice={
+info:{},
+getInfo:function(){
 	
-}
-
-Cdevice.prototype.getInfo= function(){
-	var info={
+	this.info={
 			ratio:window.devicePixelRatio, //ancomment when build 
 			height:screen.height /window.devicePixelRatio,
 			width:screen.width /window.devicePixelRatio,
@@ -15,7 +14,8 @@ Cdevice.prototype.getInfo= function(){
 			orientation:window.orientation
 			
 	}
-	return info;
+	return this.info;
+   }
 }
 
 
