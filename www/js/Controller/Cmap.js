@@ -2,7 +2,8 @@ var cmap={
 
 
 initMap:function(){	
-	
+	console.log('init map entered');
+
 	var map = new L.map('map');
 	var infodevice=cdevice.getInfo();	
 	var myPosition;	
