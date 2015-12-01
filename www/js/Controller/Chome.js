@@ -4,12 +4,12 @@ init:function(){
 	
 	deviceinfo=cdevice.getInfo();
 	vmap.setMapContainer(deviceinfo);
-	//cconnection.checkConnection(3);
+	cconnection.checkConnection(3);
 		
 		cmap.initMap();
 	
-	/*setInterval(function(){
-		cconnection.checkConnection(3);},10000);*/
+	setInterval(function(){
+		cconnection.checkConnection(3);},10000);
 		
 	
 	
