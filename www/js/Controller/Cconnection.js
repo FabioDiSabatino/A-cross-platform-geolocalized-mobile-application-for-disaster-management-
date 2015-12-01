@@ -35,12 +35,12 @@ checkConnection:function(x){
 	},
 
 clearCache:function(){
-	window.cache.clear(function(){
+	/*window.cache.clear(function(){
 		console.log('cache pulita con successo')
 	}, function(){
 		console.log('errore pulizia cache')
 	});
-	window.cache.clearTemp();
+	window.cache.clearTemp();*/
 }
 
 

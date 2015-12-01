@@ -8,8 +8,8 @@ getInfo:function(){
 	
 	this.info={
 			ratio:window.devicePixelRatio, //ancomment when build 
-			height:screen.height,// /window.devicePixelRatio,
-			width:screen.width,// /window.devicePixelRatio,
+			height:screen.height /window.devicePixelRatio,
+			width:screen.width /window.devicePixelRatio,
 			platform:device.platform,
 			orientation:window.orientation
 			
