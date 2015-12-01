@@ -10,7 +10,7 @@ initMap:function(){
 	
 	
 	
-	var offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', 
+	 offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', 
 	{
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors Tiles © HOT ',
     onReady: function(){
@@ -55,9 +55,7 @@ initMap:function(){
 		else	
 	     {		     
 			  map.setView(e.latlng,16);
-		      offlineLayer.saveTiles(17,function(){ console.log('salvataggio in corso..')},
-		    		 function(){console.log('salvataggio completato!')},
-		    		 function(){console.log('errore!')});
+		   
 		     
 	    }	     
 	  myPosition= L.marker(e.latlng,{icon:blueMarker}).addTo(map)	
@@ -85,9 +83,23 @@ initMap:function(){
 		vmap.setMapContainer(infodevice);
 	});
 	
+	$("#button_cache").click(function(){
+		alert('Sto per pulire la cache...');
+		cconnection.clearCache();
+	});
+	
+	$("#button_save").click(function(){
+		cmap.saveMap();
+	})
+	
 
 	
 	
+  },
+  saveMap:function(){
+	   offlineLayer.saveTiles(17,function(){ console.log('salvataggio in corso..')},
+	    		 function(){console.log('salvataggio completato!')},
+	    		 function(){console.log('errore!')});
   }
 }
 
