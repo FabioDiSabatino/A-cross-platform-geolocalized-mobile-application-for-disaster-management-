@@ -64,14 +64,14 @@ initMap:function(){
 	
 	
 	function onLocationError(e) {
-		if(infodevice.platform=='Android')
-			//cordova.plugins.diagnostic.switchToLocationSettings();
+		/*if(infodevice.platform=='Android')
+			cordova.plugins.diagnostic.switchToLocationSettings();
 		else if (infodevice.platform=='iOS')
-			{//cordova.plugins.diagnostic.switchToSettings(function(){
+			{cordova.plugins.diagnostic.switchToSettings(function(){
 			    console.log("Successfully switched to Settings app")
 			}, function(error){
 			    console.error("The following error occurred: "+error)
-			    })}
+			    })}*/
 	};
 
 	map.on('locationfound', onLocationFound);
