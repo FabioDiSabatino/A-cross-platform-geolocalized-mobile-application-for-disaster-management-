@@ -17,3 +17,30 @@ width: 100%;
 	
 }
 
+#button_cache{
+	height:40px;
+	width:40px;
+	border-radius: 40px;
+    border: 1px solid #000;
+	z-index:40;
+	border: 2px solid #000;
+	position:fixed;
+	top:80%;
+	left:87%;	
+	background-image: url("../img/button_cache.png");
+	background-size: 100%;
+}
+#button_save{
+	height:40px;
+	width:40px;
+	border-radius: 40px;
+    border: 1px solid #000;
+	z-index:40;
+	border: 2px solid #000;
+	position:fixed;
+	top:70%;
+	left:87%;	
+	background-image: url("../img/save-icon.png");
+	background-size: 100%;
+}
+

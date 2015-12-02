@@ -83,12 +83,12 @@ initMap:function(){
 		vmap.setMapContainer(infodevice);
 	});
 	
-	$("#button_cache").click(function(){
+	$("#button_cache").on("tap",function(){
 		alert('Sto per pulire la cache...');
 		cconnection.clearCache();
 	});
 	
-	$("#button_save").click(function(){
+	$("#button_save").on("tap",function(){
 		cmap.saveMap();
 	})
 	
