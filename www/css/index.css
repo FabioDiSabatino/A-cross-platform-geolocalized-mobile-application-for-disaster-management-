@@ -27,7 +27,7 @@ width: 100%;
 	position:fixed;
 	top:80%;
 	left:87%;	
-	
+	background-image: url("../img/button_cache.png");
 	background-size: 100%;
 }
 #button_save{
@@ -40,7 +40,7 @@ width: 100%;
 	position:fixed;
 	top:70%;
 	left:87%;	
-	
+	background-image: url("../img/save-icon.png");
 	background-size: 100%;
 }
 
