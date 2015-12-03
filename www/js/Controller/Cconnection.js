@@ -13,6 +13,7 @@ checkConnection:function(x){
 			type:'GET',
 			async:false,
 			mimeType:'image/png',
+			cache:false,
 			accepts:'image/webp,image/*,*/*;q=0.8',
 			success:function(){
 								
@@ -35,12 +36,15 @@ checkConnection:function(x){
 	},
 
 clearCache:function(){
-	/*window.cache.clear(function(){
-		console.log('cache pulita con successo')
-	}, function(){
-		console.log('errore pulizia cache')
-	});
-	window.cache.clearTemp();*/
+	 var success = function(status) {
+         alert('cache pulita');
+     }
+
+     var error = function(status) {
+         alert('Errore nella pulizia..');
+     }
+
+     window.cache.clear( success, error );
 }
 
 
