@@ -36,7 +36,7 @@ checkConnection:function(x){
 	},
 
 clearCache:function(){
-	 var success = function(status) {
+	/* var success = function(status) {
          alert('cache pulita');
      }
 
@@ -44,7 +44,8 @@ clearCache:function(){
          alert('Errore nella pulizia..');
      }
 
-     window.cache.clear( success, error );
+     window.cache.clear( success, error );*/
+	offlineLayer.redraw();
 }
 
 
