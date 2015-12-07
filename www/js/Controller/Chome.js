@@ -9,7 +9,7 @@ init:function(){
 		cmap.initMap();
 	
 	setInterval(function(){
-		cconnection.checkConnection(10);},60000);
+		cconnection.checkConnection(5);},5000);
 		
 	
 	
