@@ -25,7 +25,7 @@ initMap:function(){
     },
     onError: function(){console.log('errore db')},
     storeName:"LocalTiles", 
-    dbOption:"IndexedDB"   
+    dbOption:"WebSQL"   
 	});
 	
 	
@@ -43,7 +43,10 @@ initMap:function(){
 
 	function onLocationFound(e) {
 	
-					
+	console.log(e.latlng);
+	var coordinates=L.latLng(e.latlng.lat+0.0001,e.latlng.lng);
+	console.log("distanza haversine:"+e.latlng.distanceTo(coordinates)+"m");	
+	console.log( "distanza vincenty:"+distVincenty(e.latlng,coordinates)+"m" );
 		if(typeof myPosition !== "undefined")
 			{
 			 var speed= e.speed*3.6;

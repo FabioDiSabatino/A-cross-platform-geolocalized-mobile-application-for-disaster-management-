@@ -8,8 +8,8 @@ init:function(){
 		
 		cmap.initMap();
 	
-	setInterval(function(){
-		cconnection.checkConnection(5);},5000);
+	/*setInterval(function(){
+		cconnection.checkConnection(5);},5000);*/
 		
 	
 	
