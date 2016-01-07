@@ -3,10 +3,12 @@ var cmap={
 
 initMap:function(){	
 	console.log('init map entered');
-
-	 map = new L.map('map');
+   
+	map = new L.map('map');
+	
 	var infodevice=cdevice.getInfo();	
-	var myPosition;	
+	var myPosition;
+	var myPositionMarker;	
 	
 	
 	
@@ -42,12 +44,15 @@ initMap:function(){
     });
 
 	function onLocationFound(e) {
-	
+	myPosition=e.latlng;
 	console.log(e.latlng);
-	var coordinates=L.latLng(e.latlng.lat+0.0001,e.latlng.lng);
+	
+	var coordinates=L.latLng(e.latlng.lat+0.0001,e.latlng.lng+0.0001);
+	
 	console.log("distanza haversine:"+e.latlng.distanceTo(coordinates)+"m");	
 	console.log( "distanza vincenty:"+distVincenty(e.latlng,coordinates)+"m" );
-		if(typeof myPosition !== "undefined")
+	
+		if(typeof myPositionMarker !== "undefined")
 			{
 			 var speed= e.speed*3.6;
 			 var zoom=map.getZoom();
@@ -57,11 +62,14 @@ initMap:function(){
 			}
 		else	
 	     {		     
-			  map.setView(e.latlng,16);
+			  map.setView(e.latlng,17);
 		   
 		     
 	    }	     
-	  myPosition= L.marker(e.latlng,{icon:blueMarker}).addTo(map)	
+		myPositionMarker= L.marker(e.latlng,{icon:blueMarker}).addTo(map);
+	    
+		
+			
 	};
 	
 	
@@ -87,13 +95,19 @@ initMap:function(){
 	});
 	
 	$("#button_cache").on("tap",function(){
-		alert('Sto per pulire la cache...');
-		cconnection.clearCache();
+		alert("disegno la griglia...");
+		cgrid.calcGrid();
 	});
 	
 	$("#button_save").on("tap",function(){
 		cmap.saveMap();
 	})
+	
+	
+
+	
+	
+	
 	
 
 	
