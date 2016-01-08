@@ -21,7 +21,22 @@ calcGrid:function(){
 	//richiama metodo per il disegno della griglia
 	vgrid.drawGrid(cornerCoordinates);
 	
-}
+},
+calcDist:function(c1,c2,type){
+	// type se uguale a vincenty il metodo utilizza i due algoritmi e restituisce un 
+	// un array con le due distanze
+	if(type != undefined)
+	{
+		console.log("utilizzo anche il metodo di vincenty..")
+		return {haversine:c1.distanceTo(c2),vincenty:distVincenty(c1,c2)};
+	}
+	else
+	{
+		return {haversine:c1.distanceTo(c2)};
+	}
+	
+		
+	}
 
 
 

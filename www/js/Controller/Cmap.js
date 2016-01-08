@@ -45,12 +45,10 @@ initMap:function(){
 
 	function onLocationFound(e) {
 	myPosition=e.latlng;
-	console.log(e.latlng);
 	
 	var coordinates=L.latLng(e.latlng.lat+0.0001,e.latlng.lng+0.0001);
-	
-	console.log("distanza haversine:"+e.latlng.distanceTo(coordinates)+"m");	
-	console.log( "distanza vincenty:"+distVincenty(e.latlng,coordinates)+"m" );
+	var distance=cgrid.calcDist(e.latlng,coordinates);
+	console.log(distance);
 	
 		if(typeof myPositionMarker !== "undefined")
 			{
@@ -58,7 +56,7 @@ initMap:function(){
 			 var zoom=map.getZoom();
 			 if(speed>20)
 				 map.setView(e.latlng,zoom);
-			 map.removeLayer(myPosition);
+			 map.removeLayer(myPositionMarker);
 			}
 		else	
 	     {		     
@@ -75,14 +73,7 @@ initMap:function(){
 	
 	
 	function onLocationError(e) {
-		/*if(infodevice.platform=='Android')
-			cordova.plugins.diagnostic.switchToLocationSettings();
-		else if (infodevice.platform=='iOS')
-			{cordova.plugins.diagnostic.switchToSettings(function(){
-			    console.log("Successfully switched to Settings app")
-			}, function(error){
-			    console.error("The following error occurred: "+error)
-			    })}*/
+		map.setView(L.latLng(43.197, 8.438),8);
 	};
 
 	map.on('locationfound', onLocationFound);

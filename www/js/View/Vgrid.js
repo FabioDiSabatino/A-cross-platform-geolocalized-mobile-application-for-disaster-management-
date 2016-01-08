@@ -3,7 +3,7 @@ var vgrid={
 		console.log("drawGrid entered");
 		//disegna la griglia se e solo se lo zoom è maggiore uguale di 15
 		var zoom=map.getZoom();
-		if(zoom >16)
+		if(zoom >15)
 		{   
 		    var y0= coordinates[0].lat;
 			var x0=coordinates[0].lng;
