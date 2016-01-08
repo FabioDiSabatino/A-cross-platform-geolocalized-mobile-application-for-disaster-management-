@@ -2,12 +2,13 @@ var vmap={
 
 setMapContainer:function(deviceinfo){
 	
+	console.log(deviceinfo);
 	
 	
 	if(deviceinfo.platform =="iOS")
 	  {if(deviceinfo.orientation =="0" || deviceinfo.orientation =="180")
-		{var height=deviceinfo.height;
-		var width=deviceinfo.width;
+		{ var height=deviceinfo.height;
+		 var width=deviceinfo.width;
 		}
 	 else
 		 {

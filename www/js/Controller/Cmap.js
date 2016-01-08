@@ -73,7 +73,7 @@ initMap:function(){
 	
 	
 	function onLocationError(e) {
-		map.setView(L.latLng(43.197, 8.438),8);
+		map.setView(L.latLng(43.197, 8.438),5);
 	};
 
 	map.on('locationfound', onLocationFound);
