@@ -85,7 +85,7 @@ initMap:function(){
 		vmap.setMapContainer(infodevice);
 	});
 	
-	$("#button_cache").on("tap",function(){
+	$("#button_grid").on("tap",function(){
 		alert("disegno la griglia...");
 		cgrid.calcGrid();
 	});
