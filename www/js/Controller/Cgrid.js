@@ -1,18 +1,15 @@
 var cgrid={
-
-calcCell:function(){
-/*questo metodo deve calcolare mediante l'algoritmo di santiago la cella in cui si trova l'utente
- e invocare il metodo checkCell */
-	},
-saveWarning:function (idCell){
-/*questo metodo deve aggiornare il database locale con la nuova segnalazione nel caso di checkCell positivo*/		
-	},
-checkCell:function(){
-/*questo metodo deve chiedere al server se nella cella dell'utente non ci sia già tale segnalazione
-in tal caso deve aggiornare il numero di segnalazioni di quell'evento senza inserire un nuovo marker sulla
-mappa dell'utente*/
+dimCell:4,
+calcCell:function(latLng){
+/*questo metodo tronca latitudine e longitudine della coordinata passata
+  alla cifra specificata nella variabile dimCell, in accordo con l'algoritmo di santiago */
+	var lat=latLng.lat;
+	var lng=latLng.lng;
+	var cut=Math.pow(10,this.dimCell);
+	return L.latLng(Math.floor(lat*cut)/cut,Math.floor(lng*cut)/cut);
 	
-},
+	
+	},
 calcGrid:function(){
 	//ottiene le coordinate sud-ovest e nord-est della mappa sul display
 	var bounds=map.getBounds();
