@@ -3,7 +3,7 @@ var vgrid={
 		console.log("drawGrid entered");
 		//disegna la griglia se e solo se lo zoom è maggiore uguale di 15
 		var zoom=map.getZoom();
-		if(zoom >15)
+		if(zoom >12)
 		{   
 		    var y0= coordinates[0].lat;
 			var x0=coordinates[0].lng;
@@ -18,16 +18,16 @@ var vgrid={
 			
 			
 			
-			for(var i=y0;i<=y1;i=i+0.0001)
+			for(var i=y0;i<=y1;i=i+0.001)
 			{
 				var row=[L.latLng(i,x0),L.latLng(i,x3)];
 				L.polyline(row,{weight:2}).addTo(map);
 			}
 			
-			for(var z=x0;z<=x3;z=z+0.0001)
+			for(var z=x0;z<=x3;z=z+0.001)
 			{
 				var column=[L.latLng(y0,z),L.latLng(y1,z)];
-				L.polyline(column,{weight:2,color:'red'}).addTo(map);
+				L.polyline(column,{weight:2}).addTo(map);
 			}
 			
 			

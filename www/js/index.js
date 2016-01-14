@@ -3,7 +3,7 @@ $(document).ready(function(){
 		        chome.mux({task:'init'});
 		        vhome.mux({task:'init'});
 				fhome.mux({task:'init'});	
-				chome.mux({task:'start'});
+				
 	    		
 		}, 
 false)})

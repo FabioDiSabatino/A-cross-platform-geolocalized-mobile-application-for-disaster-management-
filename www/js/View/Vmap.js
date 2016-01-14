@@ -65,9 +65,10 @@ addMarker:function(dati)
 	
 	{
 	case 'minePosition':
-		if(typeof this.myPositionMarker !== "undefined")
+		if(typeof minePositionMarker !== "undefined")
 			{
-			  map.removeLayer(myPositionMarker);
+			  map.removeLayer(minePositionMarker);
+			  console.log("marker rimosso");
 			}
 		else	
 	     {		     

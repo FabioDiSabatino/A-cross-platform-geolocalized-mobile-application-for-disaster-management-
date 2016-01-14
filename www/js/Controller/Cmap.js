@@ -7,12 +7,17 @@ initMap:function(){
 	
  map = new L.map('map');	
  
-    offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', 
+    offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
 	{
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors Tiles © HOT ',
     onReady: function(){
     	map.addLayer(offlineLayer);
-    	
+	  	map.locate({
+	  		watch:true,
+	  		enableHighAccuracy:true,
+	  		timeout:10000
+  		
+	  	});
     	
     },
     onError: function(){console.log('errore db')},
@@ -29,7 +34,8 @@ initMap:function(){
 	console.log("location found!!")
 	myPosition=e.latlng;
 	
-	vhome.mux({task:'addMarker',dati:{type:'minePosition',coordinates:e.latlng}})
+	vhome.mux({task:'addMarker',dati:{type:'minePosition',coordinates:e.latlng}});
+	cgrid.calcCell(e.latlng);
 
 };
 	
