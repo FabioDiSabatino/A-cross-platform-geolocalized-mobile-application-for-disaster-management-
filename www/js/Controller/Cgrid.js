@@ -32,10 +32,17 @@ calcCell:function(latLng){
 	var cell={cell_number_lat,cell_number_lng};
 	
 	
-	console.log(dist);
-	console.log(cell);
+	return ({zero:L.latLng(coordinates_lat.lat,coordinates_lng.lng),cell});
 	
 	
+	},
+	
+calcCoordinates:function(id_cell){
+	
+	
+	
+	
+		
 	},
 calcGrid:function(){
 	//ottiene le coordinate sud-ovest e nord-est della mappa sul display

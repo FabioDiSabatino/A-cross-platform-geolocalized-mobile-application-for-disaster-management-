@@ -35,7 +35,8 @@ initMap:function(){
 	myPosition=e.latlng;
 	
 	vhome.mux({task:'addMarker',dati:{type:'minePosition',coordinates:e.latlng}});
-	cgrid.calcCell(e.latlng);
+	var id_cell=cgrid.calcCell(e.latlng);
+	fdb.savePosition(id_cell);
 
 };
 	
