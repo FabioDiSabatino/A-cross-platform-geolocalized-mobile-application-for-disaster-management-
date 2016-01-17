@@ -11,14 +11,10 @@ calcCell:function(latLng){
 	var cut=Math.pow(10,this.dimCell);
 	var coordinates=L.latLng(Math.floor(lat*cut)/cut,Math.floor(lng*cut)/cut);
 	
-
 	
-	var coordinates_lat=L.latLng(Math.floor(coordinates.lat),coordinates.lng);
-	var coordinates_lng=L.latLng(coordinates.lat,Math.floor(coordinates.lng));
+	var coordinates_lat=L.latLng(Math.floor(coordinates.lat*1000)/1000,coordinates.lng);
+	var coordinates_lng=L.latLng(coordinates.lat,Math.floor(coordinates.lng*1000)/1000);
 	
-	console.log(coordinates);
-	console.log (coordinates_lat);
-	console.log(coordinates_lng);
 	
 	
 	var dist_lat=this.calcDist(coordinates,coordinates_lat).haversine;
@@ -27,7 +23,7 @@ calcCell:function(latLng){
 	var dist={dist_lat,dist_lng};
 	
 	var cell_number_lat=Math.floor(dist_lat/22);
-	var cell_number_lng=Math.floor(dist_lng/18)
+	var cell_number_lng=Math.floor(dist_lng/16);
 	
 	var cell={cell_number_lat,cell_number_lng};
 	
@@ -37,8 +33,11 @@ calcCell:function(latLng){
 	
 	},
 	
-calcCoordinates:function(id_cell){
-	
+calcCoordCell:function(data){
+	 
+	 var result=L.latLng(data.zero.lat+0.0001+(data.cell.cell_number_lat*0.0001*2),data.zero.lng+0.0001+(data.cell.cell_number_lng*0.0001*2));
+	 L.circleMarker(result,{radius:5,color:'red'}).addTo(map);
+	 return result;
 	
 	
 	

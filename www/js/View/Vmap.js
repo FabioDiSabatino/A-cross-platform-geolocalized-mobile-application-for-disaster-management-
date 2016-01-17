@@ -75,8 +75,9 @@ addMarker:function(dati)
 			  map.setView(dati.coordinates,17);
 		   
 		     
-	    }	     
-		minePositionMarker=L.marker(dati.coordinates,{icon:this.PositionIcon}).addTo(map);
+	    }	
+		L.circleMarker(dati.coordinates,{radius:5}).addTo(map);     
+		//minePositionMarker=L.marker(dati.coordinates,{icon:this.PositionIcon}).addTo(map);
 		break;
 		
 	case 'eventPosition':
