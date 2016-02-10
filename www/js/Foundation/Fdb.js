@@ -33,7 +33,7 @@ var fdb={
 		});
 		db.transaction(function (tx) {
 			
-				tx.executeSql('INSERT INTO person VALUES(?,?,?,?,?,?,?,?)',[1,'Fabio Di Sabatino',data.zero.lat,data.zero.lng,data.cell.cell_number_lat,data.cell.cell_number_lng,'ferito lieve','17/01/16 15.00']);
+				tx.executeSql('INSERT INTO person VALUES(?,?,?,?,?,?,?,?)',[2,'Paola Carta',data.zero.lat,data.zero.lng,data.cell.cell_number_lat,data.cell.cell_number_lng,'ferito lieve','17/01/16 15.00']);
 		});
 		
 	},

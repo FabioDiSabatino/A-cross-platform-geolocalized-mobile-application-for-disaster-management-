@@ -6,9 +6,12 @@ var fhome={
 		case 'init':
 		fdb.createDb();
 		break;
-	  }
-		  
+	  case 'refresh':
+		//aggiorna dati db  
 			
+		break;
+	  }
+	
 	}
 	
 }

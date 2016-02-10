@@ -33,14 +33,15 @@ initMap:function(){
 		
 	console.log("location found!!")
 	myPosition=e.latlng;
-	console.log(myPosition);
 	vhome.mux({task:'addMarker',dati:{type:'minePosition',coordinates:e.latlng}});
 	var cell_data=cgrid.calcCell(e.latlng);
-    console.log(cell_data);
-	var result=cgrid.calcCoordCell(cell_data);
-	console.log(result);
+	cdati.setSys(cell_data.zero);
+	console.log("dati griglia:");
+  console.log(cell_data);
+	var result=cgrid.coordFromCell(cell_data);
 	fdb.savePosition(cell_data);
-	vgrid.drawGrid(result);
+	vgrid.drawCell(result);
+	
 
 };
 	
@@ -58,6 +59,8 @@ initMap:function(){
 		infodevice=cdevice.getInfo();
 		vmap.setMapContainer(infodevice);
 	});
+	
+	
 	
 	$("#button_grid").on("tap",function(){
 		alert("disegno la griglia...");
