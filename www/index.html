@@ -1,55 +1,153 @@
 <!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
 
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-      
-        
-        <link rel="stylesheet" type="text/css" href="css/index.css" />        
-        <link rel="stylesheet" type="text/css" href="css/leaflet.css">
-        
-        <script type="text/javascript" src="cordova.js"></script>
-        
-        <script type="text/javascript" src="api/jquery-1.11.3.min.js" ></script>
-        <script type="text/javascript" src="api/jquery.mobile-1.4.5.min.js"></script>
-        <script type="text/javascript" src="api/leaflet.js" ></script>
-        <script type="text/javascript" src="api/offlinemap.min.js" ></script>
-		 <script type="text/javascript" src="api/vincenty.js" ></script>
-	
-		<script type="text/javascript" src="js/Controller/Chome.js"></script>
-        <script type="text/javascript" src="js/Controller/Cmap.js"></script>
-        <script type="text/javascript" src="js/Controller/Cmap.js"></script>
-        <script type="text/javascript" src="js/Controller/Cdevice.js"></script>
-        <script type="text/javascript" src="js/Controller/Cconnection.js"></script>
-		 <script type="text/javascript" src="js/Controller/Cgrid.js"></script>
-		 <script type="text/javascript" src="js/Controller/Cdati.js"></script>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		    
+			
+				<link href="libs/ratchet-v2.0.2/css/ratchet.css" rel="stylesheet">
+				<link href="libs/jquery.mobile.custom/jquery.mobile.custom.structure.min.css" rel="stylesheet">
+				<link href="libs/jquery.mobile.custom/jquery.mobile.custom.theme.min.css" rel="stylesheet">
+				<link href="libs/jquery.mobile.custom/jquery.mobile-1.4.5.css" rel="stylesheet">
+				<link rel="stylesheet" type="text/css" href="css/dashboard.css" />
+				<link rel="stylesheet" type="text/css" href="css/leaflet.css">
+			  <link rel="stylesheet" type="text/css" href="css/comestai.css" />
+				<link rel="stylesheet" type="text/css" href="css/segnala.css" />
+				<link rel="stylesheet" type="text/css" href="css/mappa-segnala.css" />
+				<link rel="stylesheet" type="text/css" href="css/foi.css" />
+				<link rel="stylesheet" type="text/css" href="css/poi.css" />
+				<link rel="stylesheet" type="text/css" href="css/map.css" />
+				
+				<script src="libs/ratchet-v2.0.2/js/ratchet.js"></script>
+				<script src="libs/jquery-1.12.0.min.js"></script>
+			   <script src="libs/mustache.min.js"></script>
+				 <script src="libs/jquery.mobile.custom/jquery.mobile.custom.min.js"></script>
+		     <script type="text/javascript" src="libs/leaflet.js" ></script>
+		     <script type="text/javascript" src="libs/offlinemap.min.js" ></script>
+		 		 <script type="text/javascript" src="libs/vincenty.js" ></script>
+	       <script type="text/javascript" src="js/Controller/Chome.js"></script>
+		     <script type="text/javascript" src="js/Controller/Cmap.js"></script>
+		     <script type="text/javascript" src="js/Controller/Cmap.js"></script>
+		     <script type="text/javascript" src="js/Controller/Cdevice.js"></script>
+		     <script type="text/javascript" src="js/Controller/Cconnection.js"></script>
+		 		 <script type="text/javascript" src="js/Controller/Cgrid.js"></script>
+		 		 <script type="text/javascript" src="js/Controller/Cdati.js"></script>
+		    <script type="text/javascript" src="js/View/Vhome.js"></script>
+		 		<script type="text/javascript" src="js/View/Vgrid.js"></script>
+		 		<script type="text/javascript" src="js/View/Vmap.js"></script>
 		
-		<script type="text/javascript" src="js/View/Vhome.js"></script>
-		<script type="text/javascript" src="js/View/Vgrid.js"></script>
-		<script type="text/javascript" src="js/View/Vmap.js"></script>
-		
-		<script type="text/javascript" src="js/Foundation/Fhome.js"></script>
-        <script type="text/javascript" src="js/Foundation/Fdb.js"></script>
-        
-        
-        
-        
-        <script type="text/javascript" src="js/index.js"></script>
-        </head>
-    <body>
-    <div class="mapContainer">
-        <div id="button_grid" ></div>
-        <div id="button_save"></div>
-    	<div id="map"></div>
-    	
-    </div>
-   
+		 		<script type="text/javascript" src="js/Foundation/Fhome.js"></script>
+		         <script type="text/javascript" src="js/Foundation/Fdb.js"></script>
+				
+				<script src="js/main.js"></script>
     
-        
-        
+				<script>
+					
+					$(document).on("pageinit",function(){
+					pageHandler()});
+				</script>
+			
+    </head>
+	 <body>
+				<div class="content" id="dashboard">
+					
+				<header class="bar bar-nav header">
+				  <span class=" pull-left "><img src="icon.png" class="brand"></span>
+				  <a class="icon icon-gear pull-right"></a>
+				  <h2 class="title title-header">HelpMe</h2>
+				</header>
+			 <div class="content-widget ">
+
+				
+			 <div class=" blocco ">
+			<div class="space-negative"></div>
+			<div class="notifiche white">
+			<div class="title-notifica person">
+				<span class="media-body marg-left">Latest family status</span>
+				
+			</div>
+			<div class="content-notifica foi"></div>
+			</div>
+			<div class="space-negative-button"></div>
+ 				<div class=" ui-grid-a button-main white ">
+				<div class="widget pull-left ui-block-a ">
+ 					<button class="btn btn-block button-dashboard pull-left" id="comestai-button" >
+ 						<img src="img/howareyou.png" class="imgbutton">
+						<div class=" textbutton yellow">How are you?</div>
+ 					</button>
+ 				</div>
+ 				<div class="widget ui-block-b poi">
+ 					 <button class="btn btn-block button-dashboard pull-right" id="segnala-button">
+ 						<img src="img/signalevent.png" class="imgbutton">
+						<div class=" textbutton red">Signal event</div>
+ 					 </button>
+ 				</div>
+				</div>
+				<div class="space-negative-button"></div>
+				<div class="news white">
+		 			<div class="title-notifica official ">
+						<span class="media-body marg-left">Official news</span>
+						<span class="badge badge_verde marg-right pull-right">2</span>
+		 			</div>
+		 			<div class="content-notifica official"></div>
+				
+				</div>
+					<div class="space-negative"></div>
+				<nav class="bar bar-tab">
+				  <span class="tab-item active block-widget" >
+				    <img class="widget-image" id="foi" src="img/family.png"></img>
+						<div class="notification notify-foi"></div>
+				    
+					</span>
+				  <span class="tab-item" href="#">
+				   <img class="widget-image" id="poi" src="img/poi.png"></img>
+					 <div class="notification notify-poi"></div>
+				  
+				  </span>
+				  <span class="tab-item" href="#">
+				   <img class="widget-image" id="map-widget" src="img/map.png"></img>
+					 <div class="notification notify-map"></div>
+		 			
+				     
+				</span>
+				 
+				</nav>
+			</div>
+				
+			 
+			
+			 
+					
+			
+				
+			<!-- fine content-widget -->
+			</div>
+			
+			  </div>
+				
     </body>
 </html>

@@ -1,0 +1,36 @@
+.content-map{
+	height:calc(100% - 44px);
+}
+.mappa-card{
+	margin-top:44px;
+	margin-left:0px;
+	margin-right:0px;
+	margin-bottom:0px;
+	border:0px;
+	width:100%;
+	height:90%
+
+}
+
+.input-ind{
+ height:10%;
+	width:100%;
+	margin:0px;
+	
+}
+.input-text{
+	
+	height:100% !important;
+	
+}
+
+@media (orientation:landscape){
+	.input-ind{
+		height:15%;
+	}
+	.mappa-card{
+		height:85%;
+	}
+}
+
+

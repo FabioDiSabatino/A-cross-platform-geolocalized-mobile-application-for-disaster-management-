@@ -1,0 +1,133 @@
+.title-page{
+	height:50px;
+	
+}
+
+.title-text{
+	font-size:1.7em;
+  margin-top:5px;
+}
+
+
+
+.segnala{
+	margin-top:43px;
+	
+}
+
+.cell-segnala{
+	height:60px;
+  padding-right:2px;
+	
+	
+}
+
+.text-segnala{
+	margin-top:10px;
+	color:black;
+
+}
+
+.icon-block{
+	margin-top:-5px;
+}
+
+.text-block{
+	margin-top:5px;
+}
+
+.icon-segnala{
+	
+	height:50px;
+	width:50px;
+	border-radius:50%;
+	border:2px solid;
+	border-color: hsl(0, 1%, 20%) ;
+  background-color: hsl(0, 1%, 20%);
+}
+
+
+
+}
+
+
+
+.text-active{
+	
+	font-style:bold;
+	font-size:1.3em;
+}
+
+
+.text-active.text-long{
+	margin-top:-5px;
+	font-size:1.1em;
+}
+.long{
+	margin-top:0px;
+}
+
+.active.icon-segnala{
+	border:4px solid;
+	background-color:hsl(0, 92%, 29%);
+	border-color:hsl(0, 92%, 29%);
+}
+
+.miaposizione{
+	font-size:0.9em;
+	color:black;
+}
+
+.table-bottom{
+	margin-top:1px;
+	margin-bottom:0px;
+}
+
+.posizione{
+	border:0px;
+}
+.bottom{
+  margin-left:25%;
+	width:50%;
+	position:relative;
+	bottom:30px;
+	
+}
+.table-modal{
+	margin-bottom:0px !important;
+  border:0px !important;
+}
+.dove{
+	color:black;
+	padding-left:15px;
+}
+
+.ultima{
+	margin-bottom:60px;
+}
+
+@media screen and (max-width: 320px){
+	
+	.text-first.active{
+		font-size:1.1em;
+	}
+	.text-long.active{
+		width:190px;
+		font-size:1.1em;
+	}
+}
+@media screen and (min-width: 321px){
+	.text-med.active{
+		margin-top:-8px;
+		
+	}
+	.text-first{
+		margin-top:10px;
+	}
+	.text-first.text-active{
+		margin-top:-8px;
+	}
+}
+
+
+

@@ -5,7 +5,7 @@ mux:function(data)
 	 switch(data.task)
 	 {
 	   case 'init':
-		console.log("vhome init entered");
+		
 		vmap.initIcon();
 		vmap.setMapContainer();
 		break;

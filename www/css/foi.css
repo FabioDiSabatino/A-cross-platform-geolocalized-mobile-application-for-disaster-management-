@@ -1,0 +1,92 @@
+.content-foi{
+	margin-top:12px;
+}
+.table-stato{
+	height:117px;
+}
+.icon-caret{
+	font-size:30px !important;
+}
+.filtri{
+	margin-top:58px;
+}
+
+.check-filtro{
+	visibility:hidden;
+	margin-top:10px;
+}
+
+.check-filtro.active{
+	visibility:visible;
+}
+.profile{
+  height: 53px;
+  width: 60px;
+	margin-top:10px;
+	margin-left:-10px;
+	margin-right:20px !important;
+}
+.dati-foi{
+	margin-top:0px;
+}
+.dati{
+	height:70px;
+}
+.lista-icon{
+	height:25px;
+	background-color:hsl(0, 1%, 20%);
+	border-radius:50%;
+}
+.nome{
+	margin-left:-10px;
+}
+.testo{
+	font-size:12px;
+	margin-top:2px;
+	color:black;
+	margin-top:10px;
+	margin-left:5px;
+}
+.device{
+	height:26px;
+	background-color:hsl(0, 1%, 20%);
+	border-radius:50%;
+}
+
+.riga{
+	height:30px;
+}
+
+.lista-stato{
+	
+	border-radius:50%;
+	
+}
+.testostato{
+	margin-top:6px;
+}
+
+.riga-stato{
+	padding-top:8px;
+	padding-bottom:8px;
+}
+.content-foi{
+	height:calc(100% - 94px);
+}
+.map-foi{
+	height:100%;
+}
+.mappa-foi-content{
+	margin-left:0px;
+	margin-right:0px;
+	margin-bottom:0px;
+	border-bottom:none;
+	border-radius:0 !important;
+	width:100%;
+	height:90%
+
+}
+.input-ind-foi{
+	height:10%;
+}
+

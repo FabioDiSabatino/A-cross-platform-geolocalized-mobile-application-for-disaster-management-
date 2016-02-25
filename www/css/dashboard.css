@@ -1,0 +1,347 @@
+.header{
+	background-color:#1ABC9C !important;
+}
+#map{
+	height:100%;
+	width:100%;
+	
+}
+.mapContainer{
+	height:100%;
+	width:100%;
+}
+.brand{
+	height:40px;
+	width:40px;
+	margin-left:-10px;
+}
+.back{
+	margin-top:-10px;
+}
+.content-widget{
+		height:calc(100% - 44px);
+		margin-top:44px;
+		background-color:#FFF;
+		margin-right:0px;
+		margin-left:0px;
+		background-color:#eee;
+}
+.icon.icon-gear{
+	color:white;
+}
+.icon-home{
+
+	margin-top:0px;
+	
+}
+
+.bar-tab{
+	background-color:#cccccc;
+}
+.title-notifica{
+	height:30%;
+	border-bottom:1px solid;
+	border-color:#cccccc;
+	
+}
+
+.marg-left{
+  display: inline-block;
+  height: 100%;
+  margin-left: 3px;
+  font-size: 90%;
+	padding-top: 3px;
+}
+
+.widget{
+	height:100%;
+}
+.space-negative{
+	height:2%;
+}
+.title-page{
+	height:50px;
+	
+}
+.blocco{
+	height:calc(100% - 100px);
+	margin-left:2%;
+	margin-right:2%;
+}
+
+.notifiche{
+
+	height:23%;
+	border:1px solid;
+}
+.space-negative-button{
+	height:5%;
+}
+.button-main{
+	
+	border: 1px solid;
+	height:40%;
+	
+}
+.title-header{
+	color:white;
+	font-family:sans-serif;
+	font-size:1.2em;
+}
+
+.title-text{
+	font-size:1.7em;
+  margin-top:5px;
+	
+}
+
+.ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a{
+	color:black;
+	font-weight:normal;
+}
+
+
+.imgbutton{
+	height:70%;
+	width:100%;
+}
+.textbutton{
+	height:15%;
+	border-top:1px solid;
+}
+.news{
+  border:1px solid;
+	height:23%;
+	
+}
+.block-widget{
+
+	height:100px !important
+	
+	
+}
+
+.button-dashboard{
+  
+	font-size:1.5em;
+	width:100%;
+	
+	height:100%;
+	border-color:black;
+
+	padding:0px !important;
+	
+}
+
+#comestai-button{
+	background-color:#D0C017;
+}
+
+#segnala-button{
+	background-color:#AF1414;
+}
+.white{
+	background-color:white;
+	border-color:#cccccc;
+}
+.textbutton.red{
+  color: white;
+  border-color: #760E0E;
+ 
+	
+}
+.textbutton{
+  padding-top: 2px;
+  font-size: 0.9em;
+}
+.textbutton.yellow{
+  color: white;
+  border-color: #978C0F;
+	
+}
+
+.content-notifica{
+	height:70%;
+}
+.notifica-stato{
+	height:100%;
+	margin-bottom:0px;
+	border:0px;
+}
+.profile-notifica{
+
+	width:78%;
+	 margin-left: -10px;
+ margin-right: 20px !important;
+}
+.icon-camera{
+	height:30px;
+	width:30px;
+	margin-top:-4px;
+	
+}
+
+
+.widget-image{
+	margin-top:5px;
+	width:80px;
+	height:70px;
+	border:1px solid !important;
+	border-radius:14%;
+	border-color:black !important;
+	background-color:#568E87;
+	
+}
+.block-nome{
+	margin-top: -1px;
+}
+.dispositivo-testo{
+	margin-left:2px;
+	margin-top:30px;
+}
+.deviceimg{
+	margin-left:12px !important;
+	background-color:hsl(0, 1%, 20%);
+}
+.notification{
+	top: 70%;
+}
+.notify-foi{
+	left: 24%;
+  
+  }
+	.notify-poi{
+	  left: 57%;
+		top:70%;
+
+	}
+	.notify-map{
+	  left: 90%;
+			
+	}
+	.marg-left{
+		margin-top:6px;
+		padding-top:0px;
+	}
+	.marg-right{
+		margin-top:3px;
+		margin-right:5px;
+		padding-top:5px;
+		
+	}
+
+.notification{
+	position:absolute;
+	height:20px;
+	width:20px;
+	border:1px solid;
+	color:black;
+	border-radius:50%;
+	z-index: 20;
+	top: 68% !important;
+	
+}
+.c0{
+	border:4px solid;
+	border-color:#00cc00;;
+	background-color:#00cc00 !important;
+	
+}
+.c1{
+	border:4px solid;
+	border-color:#e6e600;
+	background-color: #e6e600 !important;
+	
+}
+.c2{
+	border:4px solid;
+	border-color: #FF9700;
+	background-color: #FF9700 !important;
+
+}
+.c3{
+		border:4px solid;
+	border-color:#F67827;
+	background-color:#F67827 !important;
+	
+}
+.c4{
+	
+	border:4px solid;
+ border-color:#ff1a1a;
+ background-color:#ff1a1a !important;
+ 
+}
+
+.orastato{
+	margin-top:22px;
+}
+.nome-notifica{
+	margin-left:1px;
+}
+.table-dashboard{
+	padding-left:10px;
+	padding-top:7px;
+	padding-right:0px;
+}
+.notifica-foi{
+padding-left:10px;
+padding-top:4px;
+}
+.notifica-icon{
+	
+	
+    height: 30px;
+    margin-top: 22px;
+    border-radius: 50%;
+   
+}
+
+
+
+
+	 @media screen and (max-width: 320px) {
+	
+	 	.button-dashboard{
+	 		font-size:1.2em;
+	 	}
+
+	 	.blocco{
+	 		height:calc(100% - 60px);
+	 	}
+	 	.block-widget{
+
+	 		height:50px !important
+	 	}
+	 	.widget-image{
+	 		margin-top:5px;
+	 		width:60px;
+	 		height:50px;
+	
+	
+	 	}
+	 	.profile-notifica{
+	 		width:43px;
+	 	}
+	 	.dispositivo-testo{
+	 		margin-top:20px !important;
+	 	}
+	 	.notifica-icon{
+	 		margin-top:13px !important;
+	 		margin-left:-12px;
+	 	}
+
+	 	.orastato{
+	 		margin-top:13px !important;
+	 	}
+		.marg-right{
+			margin-top:2px ;
+			padding-top:5px;
+		}
+		.marg-left{
+			margin-top:2px;
+		}
+	 }
+
+
+

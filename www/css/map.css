@@ -1,0 +1,11 @@
+.content-map{
+	height:calc(100% - 44px);
+	margin-top:44px;
+}
+.mappa-content{
+	height:90%;
+	margin:0px;
+}
+.input-ind-map{
+	height:10%;
+}
