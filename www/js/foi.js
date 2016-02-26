@@ -173,7 +173,7 @@ $(".mappa-foi").on("tap",function(){
 		$(".content-foi").append(template);
 	  vhome.mux({task:'init'});
 		chome.mux({task:'init'});
-		vhome.mux({task:'addPoi',pack:data.foi});
+		vhome.mux({task:'addFoi',pack:data.foi});
 	});
 	
 	
