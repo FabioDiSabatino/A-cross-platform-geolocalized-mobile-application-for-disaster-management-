@@ -144,9 +144,6 @@ $(".mappa-foi").on("tap",function(){
 		
 		$(".foi-list").remove();
 		$(".content-foi").append(template);
-		//fhome.mux({task:'init'});
-		chome.mux({task:'init'});
-	  //vhome.mux({task:'init'});
 	  
 	});
 	$(".titolo-filtri").text("Center view on:")
@@ -158,7 +155,6 @@ $(".mappa-foi").on("tap",function(){
 	else{
 		//centra sul più grave
 	}
-	
 	
 })
 

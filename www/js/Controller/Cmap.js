@@ -32,11 +32,11 @@ initMap:function(){
 	function onLocationFound(e) {
 		
 	console.log("localizzato!!")
-	
+	myPosition=e.latlng;
 	
 	vhome.mux({task:'addMarker',dati:{type:'minePosition',coordinates:e.latlng}});
 	var cell_data=cgrid.calcCell(e.latlng);
-	
+
 	console.log("dati griglia:");
   console.log(cell_data);
 	var result=cgrid.coordFromCell(cell_data);
