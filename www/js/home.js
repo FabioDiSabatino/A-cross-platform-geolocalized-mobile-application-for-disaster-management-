@@ -69,7 +69,7 @@ var data={
 			distanza:15,
 			dispositivo: "power-on",
 			ora_dispositivo:"21.30 15/02",
-			position:{zero:{lat:42.36,lng:13.412},cell:{cell_number_lat:1,cell_number_lng:0}}
+			position:{zero:{lat:42.33,lng:13.412},cell:{cell_number_lat:1,cell_number_lng:0}}
 		},
 		{
 			nome:"Fabio",
@@ -115,7 +115,7 @@ var data2={
 			number:"1",
 			ora_stato:"12.39 15/02",
 			distanza:32,
-			
+			position: {zero:{lat:42.36,lng:13.412},cell:{cell_number_lat:0,cell_number_lng:0}}
 			
 	  },
 		{
@@ -126,7 +126,7 @@ var data2={
 			number:"5",
 			ora_stato:"12.39 15/02",
 			distanza:4,
-			
+			position: {zero:{lat:42.36,lng:13.412},cell:{cell_number_lat:4,cell_number_lng:3}}
 		},
 		{
 			nome:"Office",
@@ -136,7 +136,7 @@ var data2={
 			number:"10",
 			ora_stato:"12.39 15/02",
 			distanza:21,
-			
+			position: {zero:{lat:42.36,lng:13.412},cell:{cell_number_lat:2,cell_number_lng:4}}
 		}
 	]
 

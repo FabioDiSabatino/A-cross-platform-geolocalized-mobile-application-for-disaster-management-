@@ -37,15 +37,14 @@ initMap:function(){
 		
 	console.log("localizzato!!")
 	myPosition=e.latlng;
-	
-	vhome.mux({task:'addMarker',dati:{type:'minePosition',coordinates:e.latlng}});
+	vhome.mux({task:'addMe',pack:e.latlng});
 	var cell_data=cgrid.calcCell(e.latlng);
 
 	console.log("dati griglia:");
   console.log(cell_data);
 	var result=cgrid.coordFromCell(cell_data);
 	fdb.savePosition(cell_data);
-	vgrid.drawCell(result);
+	
 	
 
 };
@@ -62,8 +61,7 @@ initMap:function(){
 
 	$(window ).on( "orientationchange", function( event ) {
 	    	   
-		infodevice=cdevice.getInfo();
-		vmap.setMapContainer(infodevice);
+	
 	});
 	
 	
@@ -77,32 +75,15 @@ initMap:function(){
 		cmap.saveMap();
 	})
 	
-	
-
-	
-	
-	
-	
-
-	
-	
   },
   saveMap:function(){
 	   offlineLayer.saveTiles(17,function(){ console.log('salvataggio in corso..')},
 	    		 function(){console.log('salvataggio completato!')},
 	    		 function(){console.log('errore!')});
   },
-  startLocate:function(){
-  	map.locate({
-  		watch:true,
-  		enableHighAccuracy:true,
-  		timeout:10000
-  		
-  	});
-  },
 	stopMap:function(){
 		map.stopLocate();
-		vmap.first=true;
+	  vhome.mux({task:'stopLocate'});
 	}
 }
 

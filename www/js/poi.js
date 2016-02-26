@@ -116,9 +116,11 @@ $(".mappa-poi").on("tap",function(){
 		
 		$(".poi-list").remove();
 		$(".content-poi").append(template);
-		//fhome.mux({task:'init'});
+		
+	  vhome.mux({task:'init'});
 		chome.mux({task:'init'});
-    //vhome.mux({task:'init'});
+		vhome.mux({task:'addPoi',pack:data2.poi});
+    
 	  
 	});
 	$(".titolo-filtri").text("Center view on:")

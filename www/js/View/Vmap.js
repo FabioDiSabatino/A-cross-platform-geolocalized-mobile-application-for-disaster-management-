@@ -8,7 +8,7 @@ first: true,
 
 
 initIcon:function(){
-	console.log("d");
+	
 		this.meIcon=L.icon({
 			        iconUrl: './img/marker-icon.png',
 			        iconRetinaUrl: './img/marker-icon-2x.png',
@@ -36,31 +36,21 @@ initIcon:function(){
 addMarker:function(dati)
 	{   
 		
-	switch (dati.type)
 	
-	{
-	case 'minePosition':
 		if(this.first)
 			{
-			
-			 map.setView(dati.coordinates,17);
+			 map.setView(dati,17);
 			 this.first=false;
 			}
 		else	
 	     {		     
 			  map.removeLayer(this.myPositionMarker);
-			  console.log("marker rimosso");
+			  
 		  }	
 		
-		this.myPositionMarker=L.circleMarker(dati.coordinates,{radius:5}).addTo(map);     
+		this.myPositionMarker=L.circleMarker(dati,{radius:10}).addTo(map);     
 	
-		break;
 		
-	case 'foi':
-		
-		
-		break;
-	}
 },
 addFoi:function(dati)
 { 
@@ -71,6 +61,19 @@ addFoi:function(dati)
 		var markerfoi=vmap.foiIcon;
 		var foi= new markerfoi({iconUrl: './img/'+dati[x].codice+'.png'});
 		L.marker(coordinates,{icon:foi}).addTo(map); 
+		
+	}
+},
+addPoi:function(dati)
+{
+	
+	for(var x in dati)
+	{ 
+		
+		var coordinates=cgrid.coordFromCell(dati[x].position);
+		var markerfoi=vmap.foiIcon;
+		var poi= new markerfoi({iconUrl: './img/'+dati[x].foto+'.png'});
+		L.marker(coordinates,{icon:poi}).addTo(map); 
 		
 	}
 }

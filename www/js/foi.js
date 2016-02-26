@@ -1,3 +1,17 @@
+(function(){
+	$.when( $.ajax({
+		type: 'POST',
+		url : "scheda-foi.tmpl",
+	})).done(function(template){
+		
+		for (var x in data.foi)
+		{ 
+			var html = Mustache.to_html(template, data.foi[x]);
+		$(".content-foi").append(html);
+	  }
+	});
+})();
+
 sortSeriousness=function( dati){
 	//riordino dati in ordine decrescente di emergenza
 	var arr=dati.foi;
@@ -17,36 +31,16 @@ sortNearest= function(dati)
 	return arr;
 }
 	
-	
-
-
 
 
 $("#back-from-foi").on("tap",function(){
 	$(".content").attr("id","dashboard");
-	cmap.stopMap();
+	chome.mux({task:'stopMap'}); 
 	$.mobile.changePage("index.html");
 });
 
 
-(function(){
 
-	
-
-	$.when( $.ajax({
-		type: 'POST',
-		url : "scheda-foi.tmpl",
-	})).done(function(template){
-		
-		for (var x in data.foi)
-		{ 
-			var html = Mustache.to_html(template, data.foi[x]);
-		$(".content-foi").append(html);
-	  }
-	});
-	
-	
-})();
 $(".latest").on("tap",function(){
 	//riordino schede o centra mappa in base al più vicino
 	
@@ -137,34 +131,6 @@ $(".nearest").on("tap",function(){
  	$(".check-seriousness").removeClass("active"); 
 });
 
-$(".mappa-foi").on("tap",function(){
-	$.when( $.ajax({
-		type: 'POST',
-		url : "mappa-foi.html",
-	})).done(function(template){
-		
-		$(".foi-list").remove();
-		$(".content-foi").append(template);
-	     vhome.mux({task:'init'});
-				chome.mux({task:'init'});
-				
-				vmap.addFoi(data.foi);
-	});
-	
-	
-	$(".titolo-filtri").text("Center view on:");
-	//centra la view della mappa in base al filtro selezionato precedente
-	if($("check-nearest").hasClass("active"))
-	{
-		//centra in base sul più vicino
-		
-	}
-	else{
-		//centra sul più grave
-	}
-	
-})
-
 $(".lista-foi").on("tap",function(){
 	
 	$.when( $.ajax({
@@ -197,7 +163,32 @@ $(".lista-foi").on("tap",function(){
 	
 })
 
-
+$(".mappa-foi").on("tap",function(){
+	$.when( $.ajax({
+		type: 'POST',
+		url : "mappa-foi.html",
+	})).done(function(template){
+		
+		$(".foi-list").remove();
+		$(".content-foi").append(template);
+	  vhome.mux({task:'init'});
+		chome.mux({task:'init'});
+		vhome.mux({task:'addPoi',pack:data.foi});
+	});
+	
+	
+	$(".titolo-filtri").text("Center view on:");
+	//centra la view della mappa in base al filtro selezionato precedente
+	if($("check-nearest").hasClass("active"))
+	{
+		//centra in base sul più vicino
+		
+	}
+	else{
+		//centra sul più grave
+	}
+	
+})
 
 
  

@@ -4,23 +4,26 @@ mux:function(data)
 	
 	 switch(data.task)
 	 {
-	   case 'init':
-		
+	  case 'init':
 		vmap.initIcon();
-		
 		break;
-		
 	  case 'getMarkerPosition' :
 	 	return vmap.getMarkerPosition();
 		break;
-	  case 'addMarker':
-		if(data.dati != undefined)
-		{
-			vmap.addMarker(data.dati);
-		}
-	 }
-}
+	  case 'addMe':
+		vmap.addMarker(data.pack);
+		break;
+	  case 'addFoi':
+		vmap.addFoi(data.pack);
+		break;
+   case 'addPoi':
+	 vmap.addPoi(data.pack);
+	break;
+	  case 'stopLocate':
+		 vmap.first=true;
+		break;
+    }
 	
-	
+	}
 	
 }
