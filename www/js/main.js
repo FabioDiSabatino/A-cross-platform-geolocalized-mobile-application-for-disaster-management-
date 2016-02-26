@@ -26,6 +26,7 @@ var pageHandler= function(){
 		break;
 	case "map-widget":
 		$.getScript("js/map.js");
+		
 		break;
 		
 		

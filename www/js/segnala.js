@@ -1,5 +1,6 @@
 $("#back-from-segnala").on("tap",function(){
 	$(".content").attr("id","dashboard");
+	
 	$.mobile.changePage("index.html");
 })
 
@@ -15,6 +16,7 @@ $(".mappa").on("tap",function(){
 	  {
 			$(".content").attr("id","pubblica-segnala");
 			$.mobile.changePage("mappa-segnala.html");
+			
 		}
 		else
 		{

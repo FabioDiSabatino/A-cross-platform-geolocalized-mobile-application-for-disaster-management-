@@ -8,16 +8,20 @@ initMap:function(){
  map = new L.map('map');	
  
     offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
-	{
+		{ 
+		
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors Tiles © HOT ',
     onReady: function(){
+			
     	map.addLayer(offlineLayer);
 	  	map.locate({
-	  		watch:true,
+				watch:true,
 	  		enableHighAccuracy:true,
-	  		timeout:10000
-  		
+	  		timeout:5000,
+	
+				
 	  	});
+			
     	
     },
     onError: function(){console.log('errore db')},
@@ -49,6 +53,7 @@ initMap:function(){
 	
 	
 	function onLocationError(e) {
+		if()
 		map.setView(L.latLng(43.197, 8.438),5);
 	};
 
@@ -94,7 +99,11 @@ initMap:function(){
   		timeout:10000
   		
   	});
-  }
+  },
+	stopMap:function(){
+		map.stopLocate();
+		vmap.first=true;
+	}
 }
 
 

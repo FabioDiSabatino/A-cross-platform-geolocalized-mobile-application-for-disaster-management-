@@ -34,6 +34,7 @@ addMarker:function(dati)
 	case 'minePosition':
 		if(this.first)
 			{
+			
 			 map.setView(dati.coordinates,17);
 			 this.first=false;
 			}

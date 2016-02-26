@@ -25,6 +25,7 @@ sortNearest= function(dati2)
 
 $("#back-from-poi").on("tap",function(){
 	$(".content").attr("id","dashboard");
+	cmap.stopMap();
 	$.mobile.changePage("index.html");
 });
 
@@ -115,6 +116,9 @@ $(".mappa-poi").on("tap",function(){
 		
 		$(".poi-list").remove();
 		$(".content-poi").append(template);
+		//fhome.mux({task:'init'});
+		chome.mux({task:'init'});
+    //vhome.mux({task:'init'});
 	  
 	});
 	$(".titolo-filtri").text("Center view on:")

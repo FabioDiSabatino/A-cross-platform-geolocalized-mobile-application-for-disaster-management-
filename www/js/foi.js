@@ -24,6 +24,7 @@ sortNearest= function(dati)
 
 $("#back-from-foi").on("tap",function(){
 	$(".content").attr("id","dashboard");
+	cmap.stopMap();
 	$.mobile.changePage("index.html");
 });
 
@@ -144,6 +145,12 @@ $(".mappa-foi").on("tap",function(){
 		
 		$(".foi-list").remove();
 		$(".content-foi").append(template);
+	
+				//fhome.mux({task:'init'});
+				chome.mux({task:'init'});
+		    //vhome.mux({task:'init'});
+	
+
 	  
 	});
 	$(".titolo-filtri").text("Center view on:")
@@ -159,6 +166,7 @@ $(".mappa-foi").on("tap",function(){
 })
 
 $(".lista-foi").on("tap",function(){
+	
 	$.when( $.ajax({
 		type: 'POST',
 		url : "scheda-foi.tmpl",
@@ -176,10 +184,11 @@ $(".lista-foi").on("tap",function(){
 			
 				data.foi=sortSeriousness(data);
 		}
+		cmap.stopMap();
 		for (var x in data.foi)
 		{ 
 			var html = Mustache.to_html(template, data.foi[x]);
-			
+		
 		$(".content-foi").append(html);
 	  }
 	});
@@ -190,6 +199,6 @@ $(".lista-foi").on("tap",function(){
 
 
 
- 
+
  
 	
