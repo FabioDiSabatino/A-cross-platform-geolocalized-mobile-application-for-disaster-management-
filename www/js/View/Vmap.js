@@ -1,7 +1,6 @@
 var vmap={
-	
-PositionIcon: undefined,
-minePositionMarker:undefined,
+myPositionMarker: undefined,
+first: true,
 
 
 
@@ -22,39 +21,7 @@ initIcon:function(){
 	
 setMapContainer:function(deviceinfo){
 	
-	deviceinfo=cdevice.getInfo();
-	
-	if(deviceinfo.platform =="iOS")
-	  {if(deviceinfo.orientation =="0" || deviceinfo.orientation =="180")
-		{ var height=deviceinfo.height;
-		 var width=deviceinfo.width;
-		}
-	 else
-		 {
-		 var height=deviceinfo.width;
-		 var width=deviceinfo.height;
-		 }
-	  }
-	else
-		{
-		var height=deviceinfo.height;
-		var width=deviceinfo.width;
-		}
-	
-		
-		
-	$("body").css({
-		"height":height,
-		"width":width,		
-		
-	});
-	
-	
-	$(".mapContainer").css({
-			"height":height,
-			"width":width,
-			
-		});
+
 	},
 	
 
@@ -65,19 +32,19 @@ addMarker:function(dati)
 	
 	{
 	case 'minePosition':
-		if(typeof minePositionMarker !== "undefined")
+		if(this.first)
 			{
-			  map.removeLayer(minePositionMarker);
-			  console.log("marker rimosso");
+			 map.setView(dati.coordinates,17);
+			 this.first=false;
 			}
 		else	
 	     {		     
-			  map.setView(dati.coordinates,17);
-		   
-		     
-	    }	
-		L.circleMarker(dati.coordinates,{radius:5}).addTo(map);     
-		//minePositionMarker=L.marker(dati.coordinates,{icon:this.PositionIcon}).addTo(map);
+			  map.removeLayer(this.myPositionMarker);
+			  console.log("marker rimosso");
+		  }	
+		
+		this.myPositionMarker=L.circleMarker(dati.coordinates,{radius:5}).addTo(map);     
+	
 		break;
 		
 	case 'eventPosition':

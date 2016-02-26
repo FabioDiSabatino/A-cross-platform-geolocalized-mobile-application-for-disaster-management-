@@ -23,7 +23,7 @@ $("#map-widget").on("tap",function(){
 	$.mobile.changePage("map.html");
 });
 
-$(".content-notifica").on("tap",function(){
+$(".content-notifica.foi").on("tap",function(){
 	$(".content").attr("id","foi");
 	sortLatest(data);
 	$.mobile.changePage("foi.html");
