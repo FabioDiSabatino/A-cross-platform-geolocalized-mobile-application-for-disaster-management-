@@ -145,19 +145,19 @@ $(".mappa-foi").on("tap",function(){
 		
 		$(".foi-list").remove();
 		$(".content-foi").append(template);
-	
-				//fhome.mux({task:'init'});
+	     vhome.mux({task:'init'});
 				chome.mux({task:'init'});
-		    //vhome.mux({task:'init'});
-	
-
-	  
+				
+				vmap.addFoi(data.foi);
 	});
-	$(".titolo-filtri").text("Center view on:")
+	
+	
+	$(".titolo-filtri").text("Center view on:");
 	//centra la view della mappa in base al filtro selezionato precedente
 	if($("check-nearest").hasClass("active"))
 	{
 		//centra in base sul più vicino
+		
 	}
 	else{
 		//centra sul più grave

@@ -7,7 +7,7 @@ mux:function(data)
 	   case 'init':
 		
 		vmap.initIcon();
-		vmap.setMapContainer();
+		
 		break;
 		
 	  case 'getMarkerPosition' :

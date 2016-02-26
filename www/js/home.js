@@ -57,6 +57,7 @@ var data={
 			distanza:2,
 			dispositivo: "power-off",
 			ora_dispositivo:"21.30 15/02",
+			position: {zero:{lat:42.36,lng:13.412},cell:{cell_number_lat:0,cell_number_lng:0}}
 	  },
 		{
 			nome:"Claudia",
@@ -67,7 +68,8 @@ var data={
 			data_stato:"23/02",
 			distanza:15,
 			dispositivo: "power-on",
-			ora_dispositivo:"21.30 15/02"
+			ora_dispositivo:"21.30 15/02",
+			position:{zero:{lat:42.36,lng:13.412},cell:{cell_number_lat:1,cell_number_lng:0}}
 		},
 		{
 			nome:"Fabio",
@@ -78,7 +80,8 @@ var data={
 			data_stato:"23/02",
 			distanza:18,
 			dispositivo: "online",
-			ora_dispositivo:"21.30 15/02"
+			ora_dispositivo:"21.30 15/02",
+			position:{zero:{lat:42.36,lng:13.412},cell:{cell_number_lat:3,cell_number_lng:3}}
 		}
 	]
 

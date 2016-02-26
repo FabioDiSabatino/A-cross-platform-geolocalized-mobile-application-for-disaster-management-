@@ -17,7 +17,7 @@ initMap:function(){
 	  	map.locate({
 				watch:true,
 	  		enableHighAccuracy:true,
-	  		timeout:5000,
+	  		timeout:500,
 	
 				
 	  	});
@@ -53,8 +53,8 @@ initMap:function(){
 	
 	
 	function onLocationError(e) {
-		if()
-		map.setView(L.latLng(43.197, 8.438),5);
+		
+		map.setView(L.latLng(42.36,13.412),12);
 	};
 
 	map.on('locationfound', onLocationFound);
