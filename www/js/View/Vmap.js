@@ -54,15 +54,20 @@ addMarker:function(dati)
 },
 addFoi:function(dati)
 { 
+	var markers = L.markerClusterGroup();
+  
+
+
 	
 	for(var x in dati)
 	{ 
 		var coordinates=cgrid.coordFromCell(dati[x].position);
 		var markerfoi=vmap.foiIcon;
 		var foi= new markerfoi({iconUrl: './img/'+dati[x].codice+'.png'});
-		L.marker(coordinates,{icon:foi}).addTo(map); 
+		markers.addLayer(L.marker(coordinates,{icon:foi}));
 		
 	}
+	map.addLayer(markers);
 },
 addPoi:function(dati)
 {
