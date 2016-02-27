@@ -1,8 +1,9 @@
 var vmap={
 myPositionMarker: undefined,
 first: true,
-	meIcon:undefined,
-	foiIcon:undefined,
+meIcon:undefined,
+foiIcon:undefined,
+centerMe:true,
 
 
 
@@ -22,11 +23,9 @@ initIcon:function(){
 		this.foiIcon = L.Icon.extend({
 					    options: {
 					      
-					        iconSize:     [50, 50],
-					        shadowSize:   [50, 64],
-					        iconAnchor:   [22, 94],
-					        shadowAnchor: [4, 62],
-					        popupAnchor:  [-3, -76]
+					        iconSize:  [40, 50],
+								
+					       
 					    }
 				});
 	},
@@ -39,7 +38,8 @@ addMarker:function(dati)
 	
 		if(this.first)
 			{
-			 map.setView(dati,17);
+				if(this.centerMe)
+					{ map.setView(dati,17);}
 			 this.first=false;
 			}
 		else	
@@ -54,17 +54,34 @@ addMarker:function(dati)
 },
 addFoi:function(dati)
 { 
-	var markers = L.markerClusterGroup();
-  
-
-
 	
+	var markers = L.markerClusterGroup({
+				maxClusterRadius: 120,
+				iconCreateFunction: function (cluster) {
+					return L.divIcon({ html: '<b>' + cluster.getChildCount() + '</b>', className: 'foiCluster', iconSize: L.point(40, 40) });
+				},
+			spiderfyDistanceMultiplier:2, showCoverageOnHover: false, zoomToBoundsOnClick: false 
+				
+			});
+			markers.on('clusterclick', function (a) {
+				a.layer.spiderfy();
+				var pop=a.layer.getAllChildMarkers();
+				for (var x in pop)
+				{ 
+						pop[x].openPopup();
+					}
+			});
+		
 	for(var x in dati)
 	{ 
 		var coordinates=cgrid.coordFromCell(dati[x].position);
 		var markerfoi=vmap.foiIcon;
 		var foi= new markerfoi({iconUrl: './img/'+dati[x].codice+'.png'});
-		markers.addLayer(L.marker(coordinates,{icon:foi}));
+		var marker_foi=L.marker(coordinates,{icon:foi});
+		var foi_popup="<p class='bolded'>"+dati[x].stato+"</p> at "+dati[x].ora_stato;
+		marker_foi.bindPopup(foi_popup);
+			
+		markers.addLayer(marker_foi);
 		
 	}
 	map.addLayer(markers);

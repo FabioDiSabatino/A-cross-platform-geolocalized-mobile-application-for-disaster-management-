@@ -150,7 +150,7 @@ $(".lista-foi").on("tap",function(){
 			
 				data.foi=sortSeriousness(data);
 		}
-		cmap.stopMap();
+	chome.mux({task:'stopMap'});
 		for (var x in data.foi)
 		{ 
 			var html = Mustache.to_html(template, data.foi[x]);
@@ -172,6 +172,7 @@ $(".mappa-foi").on("tap",function(){
 		$(".foi-list").remove();
 		$(".content-foi").append(template);
 	  vhome.mux({task:'init'});
+		vhome.mux({task:'noCenterMe'});
 		chome.mux({task:'init'});
 		vhome.mux({task:'addFoi',pack:data.foi});
 	});

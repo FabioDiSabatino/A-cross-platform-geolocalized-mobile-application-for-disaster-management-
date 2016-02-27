@@ -21,7 +21,10 @@ mux:function(data)
 	break;
 	  case 'stopLocate':
 		 vmap.first=true;
+		 vmap.centerMe=true;
 		break;
+	 case 'noCenterMe':
+		vmap.centerMe=false;
     }
 	
 	}

@@ -86,7 +86,28 @@
 	height:100%
 
 }
+.bolded{
+	 font-weight: bold;
+	 color:black;
+
+}
 .input-ind-foi{
 	height:10%;
 }
 
+.foiCluster{
+	width: 40px;
+	    height: 40px;
+	    margin-left: 5px;
+	    margin-top: 5px;
+	    text-align: center;
+	    border-radius: 15px;
+	    font: 30px "Helvetica Neue", Arial, Helvetica, sans-serif;
+			background-color:#0088bb;
+			color:white;
+}
+.leaflet-marker-icon{
+	
+	
+	border-radius:50% ;
+}

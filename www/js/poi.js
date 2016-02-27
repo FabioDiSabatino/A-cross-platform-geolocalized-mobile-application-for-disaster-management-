@@ -25,7 +25,7 @@ sortNearest= function(dati2)
 
 $("#back-from-poi").on("tap",function(){
 	$(".content").attr("id","dashboard");
-	cmap.stopMap();
+	chome.mux({task:'stopMap'});
 	$.mobile.changePage("index.html");
 });
 
@@ -118,6 +118,7 @@ $(".mappa-poi").on("tap",function(){
 		$(".content-poi").append(template);
 		
 	  vhome.mux({task:'init'});
+		vhome.mux({task:'noCenterMe'});
 		chome.mux({task:'init'});
 		vhome.mux({task:'addPoi',pack:data2.poi});
     
@@ -145,7 +146,7 @@ $(".lista-poi").on("tap",function(){
 		if($(".check-nearest").hasClass("active"))
 		{
 			//ordina in base al più vicino
-			console.log("ciao");
+		
 				data2.poi=sortNearest(data2);
 		}
 		else{
@@ -153,6 +154,7 @@ $(".lista-poi").on("tap",function(){
 			
 				data2.poi=sortNumber(data2);
 		}
+		chome.mux({task:'stopMap'});
 		for (var x in data2.poi)
 		{ 
 			var html = Mustache.to_html(template, data2.poi[x]);
