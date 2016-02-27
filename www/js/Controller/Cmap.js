@@ -7,7 +7,7 @@ initMap:function(){
 	
  map = new L.map('map');	
  
-    offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
 		{ 
 		
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors Tiles © HOT ',
@@ -26,7 +26,7 @@ initMap:function(){
     },
     onError: function(){console.log('errore db')},
     storeName:"LocalTiles", 
-    dbOption:"WebSQL"   
+    dbOption:"WebSQL"
 	});
 	
 	
@@ -84,6 +84,9 @@ initMap:function(){
 	stopMap:function(){
 		map.stopLocate();
 	  vhome.mux({task:'stopLocate'});
+	},
+	centerView:function(coordinates){
+		map.setView(coordinates,18);
 	}
 }
 

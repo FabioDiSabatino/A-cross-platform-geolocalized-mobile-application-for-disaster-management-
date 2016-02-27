@@ -10,7 +10,10 @@ mux:function(data){
 		break;
 	case 'stopMap':
 		cmap.stopMap();
-	
+		break;
+	case 'centerView':
+		var target=cgrid.coordFromCell(data.pack);
+		cmap.centerView(target);
 	}
 	
 	}

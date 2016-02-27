@@ -12,15 +12,7 @@
 	});
 })();
 
-sortSeriousness=function( dati){
-	//riordino dati in ordine decrescente di emergenza
-	var arr=dati.foi;
-	var len = arr.length;
-	arr.sort(function(a, b) {
-	    return parseFloat(b.cod_emergency) - parseFloat(a.cod_emergency);
-	});
-	return arr;
-}
+
 sortNearest= function(dati)
 {
 	var arr=dati.foi;
@@ -30,12 +22,23 @@ sortNearest= function(dati)
 	});
 	return arr;
 }
+
+sortLatestFoi= function(dati)
+{
+	var arr=dati.foi;
+	var len = arr.length;
+	arr.sort(function(a, b) {
+	    return parseFloat(b.ora_stato) - parseFloat(a.ora_stato);
+	});
 	
+	return arr;
+}
 
 
 $("#back-from-foi").on("tap",function(){
 	$(".content").attr("id","dashboard");
-	chome.mux({task:'stopMap'}); 
+	if(typeof map!= 'undefined')
+	 {chome.mux({task:'stopMap'});}
 	$.mobile.changePage("index.html");
 });
 
@@ -43,7 +46,7 @@ $("#back-from-foi").on("tap",function(){
 
 $(".latest").on("tap",function(){
 	//riordino schede o centra mappa in base al più vicino
-	
+	data.foi=sortLatestFoi(data);
 	var text=$(".titolo-filtri").text();
 	if(text =="Order by:")
 	{ //mi trovo nella schermata a lista
@@ -51,7 +54,7 @@ $(".latest").on("tap",function(){
 		type: 'POST',
 		url : "scheda-foi.tmpl",
 	})).done(function(template){
-		data.foi=sortLatest(data);
+		
 		$(".foi-list").remove();
 		for (var x in data.foi)
 		{ 
@@ -63,7 +66,7 @@ $(".latest").on("tap",function(){
 
    }
 	 else {//mi trovo nella schermata a mappa
-	 	
+	 		chome.mux({task:"centerView",pack:data.foi[0].position});
 	 }
  	$(".check-latest").addClass("active");
 	$(".check-nearest").removeClass("active");
@@ -72,7 +75,7 @@ $(".latest").on("tap",function(){
 
 $(".seriousness").on("tap",function(){
 	// riordino schede o centra la mappa in base alla gravità
-	
+	data.foi=sortSeriousness(data);
 	var text=$(".titolo-filtri").text();
 	if(text =="Order by:")
 	{
@@ -80,7 +83,7 @@ $(".seriousness").on("tap",function(){
 			type: 'POST',
 			url : "scheda-foi.tmpl",
 		})).done(function(template){
-			data.foi=sortSeriousness(data);
+			
 			$(".foi-list").remove();
 			for (var x in data.foi)
 			{ 
@@ -93,6 +96,7 @@ $(".seriousness").on("tap",function(){
 	}
 	else
 	{
+		chome.mux({task:"centerView",pack:data.foi[0].position});
 		
 	}
 	$(".check-nearest").removeClass("active");
@@ -104,7 +108,7 @@ $(".seriousness").on("tap",function(){
 
 $(".nearest").on("tap",function(){
 	//riordino schede o centra mappa in base al più vicino
-	
+	data.foi=sortNearest(data);
 	var text=$(".titolo-filtri").text();
 	if(text =="Order by:")
 	{ //mi trovo nella schermata a lista
@@ -112,7 +116,7 @@ $(".nearest").on("tap",function(){
 		type: 'POST',
 		url : "scheda-foi.tmpl",
 	})).done(function(template){
-		data.foi=sortNearest(data);
+		
 		$(".foi-list").remove();
 		for (var x in data.foi)
 		{ 
@@ -124,7 +128,9 @@ $(".nearest").on("tap",function(){
 
    }
 	 else {//mi trovo nella schermata a mappa
-	 	
+		chome.mux({task:"centerView",pack:data.foi[0].position});
+		 
+		
 	 }
  	$(".check-nearest").addClass("active");
 	$(".check-latest").removeClass("active");
@@ -168,26 +174,20 @@ $(".mappa-foi").on("tap",function(){
 		type: 'POST',
 		url : "mappa-foi.html",
 	})).done(function(template){
-		
+	
 		$(".foi-list").remove();
 		$(".content-foi").append(template);
 	  vhome.mux({task:'init'});
 		vhome.mux({task:'noCenterMe'});
 		chome.mux({task:'init'});
 		vhome.mux({task:'addFoi',pack:data.foi});
-	});
-	
+		map.on("load",function(){
+			chome.mux({task:"centerView",pack:data.foi[0].position});
+		})
+	  });
 	
 	$(".titolo-filtri").text("Center view on:");
-	//centra la view della mappa in base al filtro selezionato precedente
-	if($("check-nearest").hasClass("active"))
-	{
-		//centra in base sul più vicino
-		
-	}
-	else{
-		//centra sul più grave
-	}
+	
 	
 })
 
