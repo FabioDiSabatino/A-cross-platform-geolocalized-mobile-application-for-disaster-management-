@@ -16,15 +16,19 @@ mux:function(data)
 	  case 'addFoi':
 		vmap.addFoi(data.pack);
 		break;
-   case 'addPoi':
-	 vmap.addPoi(data.pack);
-	break;
-	  case 'stopLocate':
-		 vmap.first=true;
-		 vmap.centerMe=true;
+    case 'addPoi':
+	  vmap.addPoi(data.pack);
+	  break;
+    case 'addNews':
+	  vmap.addNews(data.pack);
 		break;
-	 case 'noCenterMe':
+	  case 'stopLocate':
+		vmap.first=true;
+		vmap.centerMe=true;
+		break;
+	  case 'noCenterMe':
 		vmap.centerMe=false;
+		break;
     }
 	
 	}

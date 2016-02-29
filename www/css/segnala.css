@@ -8,7 +8,9 @@
   margin-top:5px;
 }
 
-
+.title{
+	color:white;
+}
 
 .segnala{
 	margin-top:43px;
@@ -91,6 +93,7 @@
 	width:50%;
 	position:relative;
 	bottom:30px;
+	font-size:20px;
 	
 }
 .table-modal{

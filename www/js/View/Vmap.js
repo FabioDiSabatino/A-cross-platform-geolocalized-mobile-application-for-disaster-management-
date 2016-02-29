@@ -5,6 +5,7 @@ meIcon:undefined,
 foiIcon:undefined,
 centerMe:true,
 markers:undefined,
+	newsIcon:undefined,
 
 
 
@@ -28,6 +29,14 @@ initIcon:function(){
 					       
 					    }
 				});
+				this.newsIcon = L.Icon.extend({
+							    options: {
+					      
+							        iconSize:  [50, 60],
+								
+					       
+							    }
+						});
 			this.markers = L.markerClusterGroup({
 							maxClusterRadius: 120,
 							iconCreateFunction: function (cluster) {
@@ -100,6 +109,23 @@ addPoi:function(dati)
 		var poi_popup="<h3>"+dati[x].emergency+"</h3> <p class='bolded'> signaled "+dati[x].number+" times latest at "+dati[x].ultimo_ora+"</p>";
 		marker_poi.bindPopup(poi_popup);
 		this.markers.addLayer(marker_poi);	
+	}
+	map.addLayer(this.markers);
+	
+},
+addNews:function(dati)
+{
+	console.log("debug");	
+	for(var x in dati)
+	{ 
+		
+		var coordinates=cgrid.coordFromCell(dati[x].position);
+		var markernews=vmap.newsIcon;
+		var news= new markernews({iconUrl: './img/newsicon.png'});
+		var marker_news=L.marker(coordinates,{icon:news}); 
+		var news_popup="<h3 class='title-news'>"+dati[x].title+"</h3> <p class='bolded'>"+dati[x].content+". At "+dati[x].times+"</p> <p";
+		marker_news.bindPopup(news_popup);
+		this.markers.addLayer(marker_news);	
 	}
 	map.addLayer(this.markers);
 	

@@ -6,7 +6,32 @@
 	width:100%;
 	
 }
-
+.grid-news{
+	height:100%;
+	
+}
+.block-news{
+	height:100%;
+}
+.block-news.left{
+	width:30%;
+}
+.block-news.right{
+	width:70%;
+}
+.imgnews{
+	height:90%;
+	margin-top:5%;
+}
+.title-news{
+	color:red;
+}
+.title.titolo-filtri{
+	color:black;
+}
+.content-news{
+	color:black;
+}
 .mapContainer{
 	height:100%;
 	width:100%;
