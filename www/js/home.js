@@ -115,7 +115,8 @@ var data={
 			ora_dispositivo:"22.10 15/02",
 			position:{zero:{lat:42.374,lng:13.353},cell:{cell_number_lat:1,cell_number_lng:3}}
 		},
-	]
+	],
+	
 
 };
 
