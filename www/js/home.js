@@ -206,7 +206,12 @@ var news={
 
 (function(){
 
-	
+	$( ".header" ).fadeOut( 0);
+	$( ".splash" ).delay(1000).fadeOut( 3000,function(){
+		$( ".header" ).fadeIn( 0);
+	});
+
+
 	$.when( $.ajax({
 		type: 'POST',
 		url : "notifica-foi.tmpl",

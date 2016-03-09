@@ -9,6 +9,23 @@
 	width:100%;
 	
 }
+.splash{
+	height:100%;
+	width:100%;
+	background-color:black;
+}
+.splashimg{
+	height: auto;
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 20%;
+	margin-right: 10%;
+    margin-bottom: 20%;
+}
+.logotext{
+	text-align: center;
+	color:white;
+}
 .grid-news{
 	height:100%;
 	
@@ -34,6 +51,7 @@
 }
 .content-news{
 	color:black;
+    font-size: 0.7em;
 }
 .mapContainer{
 	height:100%;
@@ -164,7 +182,7 @@
 }
 
 #comestai-button{
-	background-color:#e6e600;
+	background-color:rgb(243, 243, 4);
 	margin-left:2%;
 }
 
@@ -374,6 +392,14 @@ padding-top:4px;
 		.marg-left{
 			margin-top:2px;
 		}
+		 .splashimg{
+			 height: 60%;
+			 width: 80%;
+			 margin-left: 10%;
+			 margin-top: 20%;
+			 margin-right: 10%;
+             margin-bottom: 5%;
+		 }
 	 }
 	 .noti-text{
 		 color:white;
