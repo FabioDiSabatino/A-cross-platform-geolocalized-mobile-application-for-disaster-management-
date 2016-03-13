@@ -12,12 +12,12 @@ calcCell:function(latLng){
 	var coordinates=L.latLng(Math.floor(lat*cut)/cut,Math.floor(lng*cut)/cut);
 	
 	
-	var perpendicular_lat=L.latLng(Math.floor(coordinates.lat*1000)/1000,coordinates.lng);
-	var perpendicular_lng=L.latLng(coordinates.lat,Math.floor(coordinates.lng*1000)/1000);
+	var perpendicular_lng=L.latLng(Math.floor(coordinates.lat*1000)/1000,coordinates.lng);
+	var perpendicular_lat=L.latLng(coordinates.lat,Math.floor(coordinates.lng*1000)/1000);
 
 	
-	var dist_lat=this.calcDist(coordinates,perpendicular_lat).haversine;
-	var dist_lng=this.calcDist(coordinates,perpendicular_lng).haversine;
+	var dist_lat=this.calcDist(coordinates,perpendicular_lng).haversine;
+	var dist_lng=this.calcDist(coordinates,perpendicular_lat).haversine;
 
 	
 	var dist={dist_lat,dist_lng};
