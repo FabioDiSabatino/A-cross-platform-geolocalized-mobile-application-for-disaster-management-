@@ -1,5 +1,5 @@
 var cmap={
-
+positionClicked:undefined,
 
 initMap:function(){	
 	
@@ -87,6 +87,12 @@ offlineLayer= new OfflineLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.pn
 	},
 	centerView:function(coordinates){
 		map.setView(coordinates,18);
+	},
+	tapHold:function(){
+		map.on('click',function(e){
+			
+			vhome.mux({task:'tapHold',pack:e.latlng})
+		})
 	}
 }
 

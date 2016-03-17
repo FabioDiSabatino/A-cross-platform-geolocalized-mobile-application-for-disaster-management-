@@ -29,6 +29,8 @@ mux:function(data)
 	  case 'noCenterMe':
 		vmap.centerMe=false;
 		break;
+	  case 'tapHold':
+			vmap.addHold(data.pack);
     }
 	
 	}

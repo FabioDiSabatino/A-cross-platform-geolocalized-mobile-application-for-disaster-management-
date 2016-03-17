@@ -14,6 +14,10 @@ mux:function(data){
 	case 'centerView':
 		var target=cgrid.coordFromCell(data.pack);
 		cmap.centerView(target);
+		break;
+	case 'taphold':
+		cmap.tapHold();
+		break;
 	}
 	
 	}

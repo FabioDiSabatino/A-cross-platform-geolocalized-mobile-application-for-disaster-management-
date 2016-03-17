@@ -5,7 +5,8 @@ meIcon:undefined,
 foiIcon:undefined,
 centerMe:true,
 markers:undefined,
-	newsIcon:undefined,
+newsIcon:undefined,
+	clicked:undefined,
 
 
 
@@ -128,6 +129,19 @@ addNews:function(dati)
 		this.markers.addLayer(marker_news);	
 	}
 	map.addLayer(this.markers);
+	
+},
+addHold:function(pos)
+{
+  
+		if(typeof this.clicked !== 'undefined')
+		{
+			map.removeLayer(this.clicked);
+		}
+		map.setView(pos,15);
+	  this.clicked=L.circleMarker(pos,{radius:10,color:'red'}).addTo(map); 
+
+	
 	
 }
 

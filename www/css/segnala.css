@@ -60,7 +60,15 @@
 	font-size:1.3em;
 }
 
-
+.grateful{
+  color: black;
+  margin-top: 31%;
+  margin-left: 25px;
+  font-size: xx-large;
+}
+.sendsignal.hidden{
+	visibility:hidden;
+}
 .text-active.text-long{
 	margin-top:-5px;
 	font-size:1.1em;
