@@ -1,11 +1,10 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.helloworld" version="1.0.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.univaq.disim.helpme" version="1.0.0">
   <name>HelpMe</name>
   <description>HelpMe is an application geolocalized cross-platform for disaster management</description>
   <author href="http://phonegap.com" email="support@phonegap.com">PhoneGap Team</author>
   <content src="index.html"/>
-	
   <preference name="permissions" value="none"/>
-  <preference name="orientation" value="default"/>
+  <preference name="orientation" value="portrait"/>
   <preference name="target-device" value="universal"/>
   <preference name="fullscreen" value="true"/>
   <preference name="webviewbounce" value="true"/>
@@ -19,50 +18,30 @@
   <preference name="disable-cursor" value="false"/>
   <preference name="android-minSdkVersion" value="14"/>
   <preference name="android-installLocation" value="auto"/>
-	<gap:plugin name="cordova-plugin-splashscreen" source="npm"/>
-  <gap:plugin name="org.apache.cordova.battery-status"/>
-  <gap:plugin name="org.apache.cordova.camera"/>
-  <gap:plugin name="org.apache.cordova.media-capture"/>
-  <gap:plugin name="org.apache.cordova.console"/>
-  <gap:plugin name="org.apache.cordova.contacts"/>
-  <gap:plugin name="org.apache.cordova.device"/>
-  <gap:plugin name="org.apache.cordova.device-motion"/>
-  <gap:plugin name="org.apache.cordova.device-orientation"/>
-  <gap:plugin name="org.apache.cordova.dialogs"/>
-  <gap:plugin name="org.apache.cordova.file"/>
-  <gap:plugin name="org.apache.cordova.file-transfer"/>
-  <gap:plugin name="org.apache.cordova.geolocation"/>
-  <gap:plugin name="org.apache.cordova.globalization"/>
-  <gap:plugin name="org.apache.cordova.inappbrowser"/>
-  <gap:plugin name="org.apache.cordova.media"/>
-  <gap:plugin name="org.apache.cordova.network-information"/>
-  <gap:plugin name="org.apache.cordova.splashscreen"/>
-  <gap:plugin name="org.apache.cordova.vibration"/>
+  <feature name="http://api.phonegap.com/1.0/network"/>
+  <!-- <plugin name="org.apache.cordova.battery-status"/> -->
+  <!--  <plugin name="org.apache.cordova.camera"/> -->
+  <!--  <plugin name="org.apache.cordova.media-capture"/> -->
+  <plugin name="cordova-plugin-console" spec="1.0.1" source="pgb" />
+  <!--  <plugin name="org.apache.cordova.contacts"/> -->
+  <plugin name="cordova-plugin-device" spec="1.0.1" source="pgb" />
+  <!--  <plugin name="org.apache.cordova.device-motion"/> -->
+  <!--  <plugin name="org.apache.cordova.device-orientation"/> -->
+  <plugin name="cordova-plugin-dialogs"/>
+  <!--  <plugin name="org.apache.cordova.file"/> -->
+  <!--  <plugin name="org.apache.cordova.file-transfer"/> -->
+  <plugin name="cordova-plugin-geolocation" spec="1.0.1" source="pgb" />
+  <plugin name="cordova-plugin-globalization" spec="1.0.1" source="pgb" />
+  <!--  <plugin name="org.apache.cordova.inappbrowser"/> -->
+  <!--  <plugin name="org.apache.cordova.media"/> -->
+  <plugin name="cordova-plugin-network-information" spec="1.0.1" source="pgb" />
+  <plugin name="cordova-plugin-splashscreen" spec="2.1.0" source="pgb" />
+  <!-- <plugin name="org.apache.cordova.vibration"/> -->
   <icon src="icon.png"/>
-  <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
-  <icon src="www/res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
-  <icon src="www/res/icon/android/icon-72-hdpi.png" gap:platform="android" gap:qualifier="hdpi"/>
-  <icon src="www/res/icon/android/icon-96-xhdpi.png" gap:platform="android" gap:qualifier="xhdpi"/>
-  <icon src="www/res/icon/blackberry/icon-80.png" gap:platform="blackberry"/>
-  <icon src="www/res/icon/blackberry/icon-80.png" gap:platform="blackberry" gap:state="hover"/>
-  <icon src="www/res/icon/ios/icon-57.png" gap:platform="ios" width="57" height="57"/>
-  <icon src="www/res/icon/ios/icon-72.png" gap:platform="ios" width="72" height="72"/>
-  <icon src="www/res/icon/ios/icon-57-2x.png" gap:platform="ios" width="114" height="114"/>
-  <icon src="www/res/icon/ios/icon-72-2x.png" gap:platform="ios" width="144" height="144"/>
-  <icon src="www/res/icon/webos/icon-64.png" gap:platform="webos"/>
-  <icon src="www/res/icon/windows-phone/icon-48.png" gap:platform="winphone"/>
-  <icon src="www/res/icon/windows-phone/icon-173-tile.png" gap:platform="winphone" gap:role="background"/>
-  <gap:splash src="www/res/screen/android/screen-ldpi-portrait.png" gap:platform="android" gap:qualifier="port-ldpi"/>
-  <gap:splash src="www/res/screen/android/screen-mdpi-portrait.png" gap:platform="android" gap:qualifier="port-mdpi"/>
-  <gap:splash src="www/res/screen/android/screen-hdpi-portrait.png" gap:platform="android" gap:qualifier="port-hdpi"/>
-  <gap:splash src="www/res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:qualifier="port-xhdpi"/>
-  <gap:splash src="www/res/screen/blackberry/screen-225.png" gap:platform="blackberry"/>
-  <gap:splash src="www/res/screen/ios/screen-iphone-portrait.png" gap:platform="ios" width="320" height="480"/>
-  <gap:splash src="www/res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios" width="640" height="960"/>
-  <gap:splash src="www/res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios" width="640" height="1136"/>
-  <gap:splash src="www/res/screen/ios/screen-ipad-portrait.png" gap:platform="ios" width="768" height="1024"/>
-  <gap:splash src="www/res/screen/ios/screen-ipad-landscape.png" gap:platform="ios" width="1024" height="768"/>
-  <gap:splash src="www/res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone"/>
+  <icon src="res/icon/blackberry/icon-80.png" platform="blackberry"/>
+  <icon src="res/icon/blackberry/icon-80.png" platform="blackberry" state="hover"/>
+  <icon src="res/icon/webos/icon-64.png" platform="webos"/>
+  <splash src="res/screen/blackberry/screen-225.png" platform="blackberry"/>
   <access origin="*"/>
   <plugin name="cordova-plugin-whitelist" version="1"/>
   <allow-intent href="http://*/*"/>
@@ -72,11 +51,50 @@
   <allow-intent href="mailto:*"/>
   <allow-intent href="geo:*"/>
   <platform name="android">
-    <allow-intent href="market:*"/>
+		<allow-intent href="market:*"/>
+        <icon src="res/icon/android/ldpi.png" density="ldpi" />
+        <icon src="res/icon/android/mdpi.png" density="mdpi" />
+        <icon src="res/icon/android/hdpi.png" density="hdpi" />
+        <icon src="res/icon/android/xhdpi.png" density="xhdpi" />
+        <icon src="res/icon/android/xxhdpi.png" density="xxhdpi" />
+        <icon src="res/icon/android/xxxhdpi.png" density="xxxhdpi" />
+		<splash src="res/screen/android/screen-ldpi-portrait.png" qualifier="port-ldpi"/>
+  <splash src="res/screen/android/screen-mdpi-portrait.png" qualifier="port-mdpi"/>
+  <splash src="res/screen/android/screen-hdpi-portrait.png" qualifier="port-hdpi"/>
+  <splash src="res/screen/android/screen-xhdpi-portrait.png" qualifier="port-xhdpi"/>
   </platform>
-  <platform name="ios">
-    <allow-intent href="itms:*"/>
-    <allow-intent href="itms-apps:*"/>
-  </platform>
-  <platform name="winphone" />
+  <!-- <platform name="ios">
+		<allow-intent href="itms:*"/>
+		<allow-intent href="itms-apps:*"/>
+        <icon src="res/icon/ios/icon-60@3x.png" width="180" height="180" />
+        <icon src="res/icon/ios/icon-60.png" width="60" height="60" />
+        <icon src="res/icon/ios/icon-60@2x.png" width="120" height="120" />
+        <icon src="res/icon/ios/icon-76.png" width="76" height="76" />
+        <icon src="res/icon/ios/icon-76@2x.png" width="152" height="152" />
+        <icon src="res/icon/ios/icon-40.png" width="40" height="40" />
+        <icon src="res/icon/ios/icon-40@2x.png" width="80" height="80" />
+        <icon src="res/icon/ios/icon.png" width="57" height="57" />
+        <icon src="res/icon/ios/icon@2x.png" width="114" height="114" />
+        <icon src="res/icon/ios/icon-72.png" width="72" height="72" />
+        <icon src="res/icon/ios/icon-72@2x.png" width="144" height="144" />
+        <icon src="res/icon/ios/icon-small.png" width="29" height="29" />
+        <icon src="res/icon/ios/icon-small@2x.png" width="58" height="58" />
+        <icon src="res/icon/ios/icon-50.png" width="50" height="50" />
+        <icon src="res/icon/ios/icon-50@2x.png" width="100" height="100" />
+		<icon src="res/icon/ios/icon-57.png" width="57" height="57"/>
+  <icon src="res/icon/ios/icon-72.png" width="72" height="72"/>
+  <icon src="res/icon/ios/icon-57-2x.png" width="114" height="114"/>
+  <icon src="res/icon/ios/icon-72-2x.png" width="144" height="144"/>
+    </platform> -->
+  <platform name="windows">
+        <icon src="res/icon/windows/storelogo.png" target="StoreLogo" />
+        <icon src="res/icon/windows/smalllogo.png" target="Square30x30Logo" />
+        <icon src="res/icon/windows/Square44x44Logo.png" target="Square44x44Logo" />
+        <icon src="res/icon/windows/Square70x70Logo.png" target="Square70x70Logo" />
+        <icon src="res/icon/windows/Square71x71Logo.png" target="Square71x71Logo" />
+        <icon src="res/icon/windows/Square150x150Logo.png" target="Square150x150Logo" />
+        <icon src="res/icon/windows/Square310x310Logo.png" target="Square310x310Logo" />
+        <icon src="res/icon/windows/Wide310x150Logo.png" target="Wide310x150Logo" />
+		<splash src="res/screen/windows/screen-portrait.jpg" />
+    </platform>
 </widget>
