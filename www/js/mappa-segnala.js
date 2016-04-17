@@ -1,19 +1,15 @@
 
-
-$("#back-from-pubblica-segnala").on("tap",function(){
-	$(".content").attr("id","segnala");
-	cmap.stopMap();
-	$.mobile.changePage("segnala.html");
+$("#back-from-pubblica-segnala").on("touchstart MSPointerDown click", function () {
+    cmap.stopMap();
+    $.mobile.pageContainer.pagecontainer("change", "index.html", { role: "page" });
 });
-$(".chiusa").on("tap",function(){
-	$(".content").attr("id","dashboard");
-		cmap.stopMap();
-	$.mobile.changePage("index.html");
-
+$(".chiusa").on("touchstart MSPointerDown click", function () {
+    cmap.stopMap();
+    $.mobile.pageContainer.pagecontainer("change", "segnala.html", { role: "page" });
 });
 
-vhome.mux({task:'init'});
-vhome.mux({task:'noCenterMe'});
-chome.mux({task:'init'});
-chome.mux({task:'taphold'});
-vhome.mux({task:'taphold'});
+vhome.mux({ task: 'init' });
+vhome.mux({ task: 'noCenterMe' });
+chome.mux({ task: 'init' });
+chome.mux({ task: 'taphold' });
+vhome.mux({ task: 'taphold' });

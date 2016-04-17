@@ -1,34 +1,34 @@
 ﻿<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-    <script type="text/javascript" >
-      if (window.navigator.userAgent.indexOf("iPhone") == -1 && window.navigator.userAgent.indexOf("iPad") == -1) {
-        document.querySelector("meta[name=viewport]").setAttribute("content", "user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, height=device-height");
-      }
+    <script type="text/javascript">
+        if (window.navigator.userAgent.indexOf("iPhone") == -1 && window.navigator.userAgent.indexOf("iPad") == -1) {
+            document.querySelector("meta[name=viewport]").setAttribute("content", "user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, height=device-height");
+        }
     </script>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link href="libs/ratchet-v2.0.2/css/ratchet.css" rel="stylesheet">
-    <link href="libs/jquery.mobile.custom/jquery.mobile.custom.structure.min.css" rel="stylesheet">
-    <link href="libs/jquery.mobile.custom/jquery.mobile.custom.theme.min.css" rel="stylesheet">
-    <link href="libs/jquery.mobile.custom/jquery.mobile-1.4.5.css" rel="stylesheet">
+    <link href="libs/jqm/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" />
+    <link href="libs/jqm/jquery.mobile.theme-1.4.5.min.css" rel="stylesheet" />
+    <link href="libs/jqm/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/markercluster.css" />
-    <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
     <link rel="stylesheet" type="text/css" href="css/leaflet.css">
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
     <link rel="stylesheet" type="text/css" href="css/comestai.css" />
     <link rel="stylesheet" type="text/css" href="css/segnala.css" />
     <link rel="stylesheet" type="text/css" href="css/mappa-segnala.css" />
     <link rel="stylesheet" type="text/css" href="css/foi.css" />
     <link rel="stylesheet" type="text/css" href="css/poi.css" />
     <link rel="stylesheet" type="text/css" href="css/map.css" />
-	<script src="phonegap.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="libs/jquery-1.12.3.min.js"></script>
-    <script type="text/javascript" src="libs/jquery.mobile.custom/jquery.mobile.custom.min.js"></script>
-	<script type="text/javascript" src="libs/mustache.min.js"></script>
+    <script type="text/javascript" src="libs/jqm/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="libs/mustache.min.js"></script>
     <script type="text/javascript" src="libs/leaflet.js"></script>
     <script type="text/javascript" src="libs/offlinemap.min.js"></script>
     <script type="text/javascript" src="libs/vincenty.js"></script>
@@ -44,76 +44,76 @@
     <script type="text/javascript" src="js/View/Vmap.js"></script>
     <script type="text/javascript" src="js/Foundation/Fhome.js"></script>
     <script type="text/javascript" src="js/Foundation/Fdb.js"></script>
-  </head>
-  <body>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
     <div class="content" id="dashboard">
-      <header class="bar bar-nav header">
-        <a class="icon icon-gear pull-right" ></a>
-        <h2 class="title title-header">HelpMe</h2>
-      </header>
-      <div class="content-widget ">
-        <div class="blocco">
-          <div class="space-negative"></div>
-          <div class="notifiche white">
-            <div class="title-notifica person">
-              <span class="media-body marg-left">Most severe status of friends</span>
-            </div>
-            <div class="content-notifica content-notifica-foi foi"></div>
-          <div class="space-negative"></div>
-          <div class="ui-grid-a button-main white ">
-            <div class="widget pull-left ui-block-a ">
-              <div class="btn btn-block button-dashboard pull-left" id="comestai-button">
-                <img src="img/howareyou.png" class="imgbutton" />
-                <div class="textbutton yellow">How are you?</div>
-              </div>
-            </div>
-            <div class="widget ui-block-b poi">
-              <div class="btn btn-block button-dashboard pull-right" id="segnala-button">
-                <img src="img/signalevent.png" class="imgbutton" />
-                <div class="textbutton red">Signal event</div>
-              </div>
-            </div>
-          </div>
-          <div class="space-negative"></div>
-          <div class="news white">
-            <div class="title-notifica official">
-              <span class="media-body marg-left">Official news</span>
-              <span class="badge badge_verde marg-right pull-right">2</span>
-            </div>
-            <div class="content-notifica official">
-              <div class="ui-grid-a grid-news">
-                <div class="ui-block-a block-news left">
-                  <img src="img/news.png" class="imgnews" />
+        <header class="bar bar-nav header">
+            <a class="icon icon-gear pull-right"></a>
+            <h2 class="title title-header">HelpMe</h2>
+        </header>
+        <div class="content-widget ">
+            <div class="blocco">
+                <div class="space-negative"></div>
+                <div class="notifiche white">
+                    <div class="title-notifica person">
+                        <span class="media-body marg-left">Most severe status of friends</span>
+                    </div>
+                    <div class="content-notifica foi" id="content-notifica-foi"></div>
+                    <div class="space-negative"></div>
+                    <div class="ui-grid-a button-main white ">
+                        <div class="widget pull-left ui-block-a ">
+                            <div class="btn btn-block button-dashboard pull-left" id="comestai-button">
+                                <img src="img/howareyou.png" class="imgbutton" />
+                                <div class="textbutton yellow">How are you?</div>
+                            </div>
+                        </div>
+                        <div class="widget ui-block-b poi">
+                            <div class="btn btn-block button-dashboard pull-right" id="segnala-button">
+                                <img src="img/signalevent.png" class="imgbutton" />
+                                <div class="textbutton red">Signal event</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-negative"></div>
+                    <div class="news white">
+                        <div class="title-notifica official">
+                            <span class="media-body marg-left">Official news</span>
+                            <span class="badge badge_verde marg-right pull-right">2</span>
+                        </div>
+                        <div class="content-notifica official">
+                            <div class="ui-grid-a grid-news">
+                                <div class="ui-block-a block-news left">
+                                    <img src="img/news.png" class="imgnews" />
+                                </div>
+                                <div class="ui-block-b block-news right">
+                                    <header class="title-news"></header>
+                                    <p class="content-news"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-negative"></div>
+                    <nav class="bar bar-tab">
+                        <div class="tab-item active block-widget">
+                            <img class="widget-image" id="foi" src="img/family.png" />
+                            <div class="notification notify-foi alert">
+                                <p class="noti-text">3</p>
+                            </div>
+                        </div>
+                        <div class="tab-item">
+                            <img class="widget-image" id="poi" src="img/poi.png" />
+                            <div class="notification notify-poi quiet">
+                                <p class="noti-text">1</p>
+                            </div>
+                        </div>
+                        <span class="tab-item">
+                            <img class="widget-image" id="map-widget" src="img/map.png" />
+                        </span>
+                    </nav>
                 </div>
-                <div class="ui-block-b block-news right">
-                  <header class="title-news"></header>
-                  <p class="content-news"></p>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="space-negative"></div>
-          <nav class="bar bar-tab">
-            <div class="tab-item active block-widget">
-              <img class="widget-image" id="foi" src="img/family.png" />
-              <div class="notification notify-foi alert">
-                <p class="noti-text">3</p>
-              </div>
-            </div>
-            <div class="tab-item">
-              <img class="widget-image" id="poi" src="img/poi.png" />
-              <div class="notification notify-poi quiet">
-                <p class="noti-text">1</p>
-              </div>
-            </div>
-            <span class="tab-item">
-              <img class="widget-image" id="map-widget" src="img/map.png" />
-            </span>
-          </nav>
         </div>
-		</div>
-	  </div>
-	</div>
-    <script type="text/javascript" src="js/home.js"></script>
-  </body>
+    </div>
+</body>
 </html>
