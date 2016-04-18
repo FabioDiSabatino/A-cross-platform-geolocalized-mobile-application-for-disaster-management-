@@ -45,7 +45,7 @@ $.get("scheda-poi.tmpl", function (template) {
 
 
 
-$(".number").on("touchstart MSPointerDown click", function () {
+$(".number").on(window.UXEvent, function () {
     // riordino schede o centra la mappa in base al numero di segnalazioni
     data2.poi = sortNumber(data2);
     var text = $(".titolo-filtri").text();
@@ -70,7 +70,7 @@ $(".number").on("touchstart MSPointerDown click", function () {
 
 });
 
-$(".nearest").on("touchstart MSPointerDown click", function () {
+$(".nearest").on(window.UXEvent, function () {
     //riordino schede o centra mappa in base al più vicino
     data2.poi = sortNearest(data2);
     var text = $(".titolo-filtri").text();
@@ -93,7 +93,7 @@ $(".nearest").on("touchstart MSPointerDown click", function () {
     $(".check-latest").removeClass("active");
 });
 
-$(".latest").on("touchstart MSPointerDown click", function () {
+$(".latest").on(window.UXEvent, function () {
     //riordino schede o centra mappa in base al più vicino
     data2.poi = sortLatest(data2);
     var text = $(".titolo-filtri").text();
@@ -115,7 +115,7 @@ $(".latest").on("touchstart MSPointerDown click", function () {
     $(".check-number").removeClass("active");
 });
 
-$(".mappa-poi").on("touchstart MSPointerDown click", function () {
+$(".mappa-poi").on(window.UXEvent, function () {
     $.get("mappa-foi.html", function (template) {
         $(".poi-list").remove();
         $(".content-poi").append(template);
@@ -130,7 +130,7 @@ $(".mappa-poi").on("touchstart MSPointerDown click", function () {
     $(".titolo-filtri").text("Center view on:")
 });
 
-$(".lista-poi").on("touchstart MSPointerDown click", function () {
+$(".lista-poi").on(window.UXEvent, function () {
     $.get("scheda-poi.tmpl", function (template) {
         $(".map-foi").remove();
         if ($(".check-nearest").hasClass("active")) {

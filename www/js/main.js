@@ -41,4 +41,14 @@ document.addEventListener("deviceready", function () {
             $.mobile.pageContainer.pagecontainer("change", "index.html", { role: "page" });
         }
     }, false);
+    window.UXEvent;
+    if ("ontouchstart" in window) {
+        //iOS, Android & W10
+        window.UXEvent = "touchstart";
+    } else if ("MSPointerDown" in window) {
+        //Windows Phone 8
+        window.UXEvent = "MSPointerDown";
+    } else {
+        window.UXEvent = "click";
+    }
 }, false);

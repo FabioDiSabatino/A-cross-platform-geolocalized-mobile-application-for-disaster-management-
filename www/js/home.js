@@ -173,23 +173,23 @@ var news = {
 };
 
 
-$("#comestai-button").on("touchstart MSPointerDown click", function () {
+$("#comestai-button").on(window.UXEvent, function () {
     $.mobile.pageContainer.pagecontainer("change", "comestai.html", { role: "page" });
 });
 
-$("#poi").on("touchstart MSPointerDown click", function () {
+$("#poi").on(window.UXEvent, function () {
     $.mobile.pageContainer.pagecontainer("change", "poi.html", { role: "page" });
 });
 
-$("#segnala-button").on("touchstart MSPointerDown click", function () {
+$("#segnala-button").on(window.UXEvent, function () {
     $.mobile.pageContainer.pagecontainer("change", "segnala.html", { role: "page" });
 });
 
-$("#foi").on("touchstart MSPointerDown click", function () {
+$("#foi").on(window.UXEvent, function () {
     $.mobile.pageContainer.pagecontainer("change", "foi.html", { role: "page" });
 });
 
-$("#map-widget").on("touchstart MSPointerDown click", function () {
+$("#map-widget").on(window.UXEvent, function () {
     $.mobile.pageContainer.pagecontainer("change", "map.html", { role: "page" });
 });
 

@@ -1,5 +1,5 @@
 
-$("#back-from-map").on("touchstart MSPointerDown click", function () {
+$("#back-from-map").on(window.UXEvent, function () {
     chome.mux({ task: 'stopMap' });
     $.mobile.pageContainer.pagecontainer("change", "index.html", { role: "page" });
 });
@@ -11,7 +11,7 @@ sortNearest = function (dati) {
     });
     return arr;
 };
-$(".latest").on("touchstart MSPointerDown click", function () {
+$(".latest").on(window.UXEvent, function () {
     //riordino schede o centra mappa in base al più vicino
     news.official = sortLatestNews(news);
     chome.mux({ task: "centerView", pack: news.official[0].position });
@@ -20,7 +20,7 @@ $(".latest").on("touchstart MSPointerDown click", function () {
     $(".check-nearest").removeClass("active");
 
 });
-$(".nearest").on("touchstart MSPointerDown click", function () {
+$(".nearest").on(window.UXEvent, function () {
     //riordino schede o centra mappa in base al più vicino
     news.official = sortNearest(news);
     chome.mux({ task: "centerView", pack: news.official[0].position });

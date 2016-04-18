@@ -1,9 +1,9 @@
 
-$("#back-from-pubblica-segnala").on("touchstart MSPointerDown click", function () {
+$("#back-from-pubblica-segnala").on(window.UXEvent, function () {
     cmap.stopMap();
     $.mobile.pageContainer.pagecontainer("change", "index.html", { role: "page" });
 });
-$(".chiusa").on("touchstart MSPointerDown click", function () {
+$(".chiusa").on(window.UXEvent, function () {
     cmap.stopMap();
     $.mobile.pageContainer.pagecontainer("change", "segnala.html", { role: "page" });
 });

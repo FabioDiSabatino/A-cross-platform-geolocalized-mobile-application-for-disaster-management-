@@ -25,7 +25,7 @@ var sortLatestFoi = function (dati) {
 }
 
 
-$("#back-from-foi").on("touchstart MSPointerDown click", function () {
+$("#back-from-foi").on(window.UXEvent, function () {
     if (typeof map != 'undefined')
     {
         chome.mux({ task: 'stopMap' });
@@ -35,7 +35,7 @@ $("#back-from-foi").on("touchstart MSPointerDown click", function () {
 
 
 
-$(".latest").on("touchstart MSPointerDown click", function () {
+$(".latest").on(window.UXEvent, function () {
     //riordino schede o centra mappa in base al più vicino
     data.foi = sortLatestFoi(data);
     var text = $(".titolo-filtri").text();
@@ -58,7 +58,7 @@ $(".latest").on("touchstart MSPointerDown click", function () {
     $(".check-seriousness").removeClass("active");
 });
 
-$(".seriousness").on("touchstart MSPointerDown click", function () {
+$(".seriousness").on(window.UXEvent, function () {
     // riordino schede o centra la mappa in base alla gravità
     data.foi = sortSeriousness(data);
     var text = $(".titolo-filtri").text();
@@ -79,7 +79,7 @@ $(".seriousness").on("touchstart MSPointerDown click", function () {
     $(".check-seriousness").addClass("active");
 });
 
-$(".nearest").on("touchstart MSPointerDown click", function () {
+$(".nearest").on(window.UXEvent, function () {
     //riordino schede o centra mappa in base al più vicino
     data.foi = sortNearest(data);
     var text = $(".titolo-filtri").text();
@@ -101,7 +101,7 @@ $(".nearest").on("touchstart MSPointerDown click", function () {
     $(".check-seriousness").removeClass("active");
 });
 
-$(".lista-foi").on("touchstart MSPointerDown click", function () {
+$(".lista-foi").on(window.UXEvent, function () {
     $.get("scheda-foi.tmpl", function (template) {
         $(".map-foi").remove();
         if ($(".check-nearest").hasClass("active")) {
@@ -123,7 +123,7 @@ $(".lista-foi").on("touchstart MSPointerDown click", function () {
 
 });
 
-$(".mappa-foi").on("touchstart MSPointerDown click", function () {
+$(".mappa-foi").on(window.UXEvent, function () {
     $.get("mappa-foi.html", function (template) {
         $(".foi-list").remove();
         $(".content-foi").append(template);
