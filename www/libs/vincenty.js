@@ -4,7 +4,6 @@ Number.prototype.toRad = function () { return this * Math.PI / 180; }
 //adapted for LeafLet Vincenty’s formula
 //details: http://www.movable-type.co.uk/scripts/latlong-vincenty.html
 function distVincenty() {
-
    if(arguments.length==2) { // support different versions of LeafLet
 		var lat1 = arguments[0].lat; 
 		var lon1 = arguments[0].lng; 

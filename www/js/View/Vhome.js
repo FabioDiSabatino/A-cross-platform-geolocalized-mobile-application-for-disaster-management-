@@ -1,38 +1,39 @@
-var vhome={
-mux:function(data)
-{    
-	
-	 switch(data.task)
-	 {
-	  case 'init':
-		vmap.initIcon();
-		break;
-	  case 'getMarkerPosition' :
-	 	return vmap.getMarkerPosition();
-		break;
-	  case 'addMe':
-		vmap.addMarker(data.pack);
-		break;
-	  case 'addFoi':
-		vmap.addFoi(data.pack);
-		break;
-    case 'addPoi':
-	  vmap.addPoi(data.pack);
-	  break;
-    case 'addNews':
-	  vmap.addNews(data.pack);
-		break;
-	  case 'stopLocate':
-		vmap.first=true;
-		vmap.centerMe=true;
-		break;
-	  case 'noCenterMe':
-		vmap.centerMe=false;
-		break;
-	  case 'tapHold':
-			vmap.addHold(data.pack);
-    }
-	
-	}
-	
-}
+var View;
+(function (View) {
+    "use strict";
+    var Home = (function () {
+        function Home() {
+            this.map = new View.Map(main.CHome.Map);
+        }
+        Home.prototype.getMarkerPosition = function () {
+        };
+        Home.prototype.addMe = function (pack) {
+            this.map.addMarker(pack);
+        };
+        Home.prototype.addFoi = function (pack) {
+            this.map.addFoi(pack);
+        };
+        Home.prototype.addPoi = function (pack) {
+            this.map.addPoi(pack);
+        };
+        Home.prototype.addNews = function (pack) {
+            this.map.addNews(pack);
+        };
+        Home.prototype.stopLocate = function () {
+            this.map.CenterMe = true;
+            this.map.First = true;
+        };
+        Home.prototype.noCenterMe = function () {
+            this.map.CenterMe = false;
+        };
+        Home.prototype.tapHold = function (pack) {
+            this.map.addHold(pack);
+        };
+        Home.prototype.clearMap = function () {
+            this.map.removeMarkers();
+        };
+        return Home;
+    }());
+    View.Home = Home;
+})(View || (View = {}));
+//# sourceMappingURL=Vhome.js.map

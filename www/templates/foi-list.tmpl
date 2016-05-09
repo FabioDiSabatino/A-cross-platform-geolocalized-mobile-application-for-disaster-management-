@@ -1,0 +1,18 @@
+<li class="table-view-cell media riga-stato">
+  <p class="nome">{{escapeName name}}</p>
+  <img src="{{picture}}" class="media-object pull-left profile" />
+  <div class="media-body" >
+    <div class="riga">
+      <img src="img/statuses/{{statusIconName status}}.png" class="icon-list pull-left" id="c{{status}}" />
+      <p class="testo pull-left testostato">{{statusName status}} {{formatDate latestUpdate}}</p>
+    </div>
+    <div class="riga">
+      <img src="img/device.png" class="icon-list pull-left" />
+      <p class="testo pull-left">{{deviceStatusName deviceStatus}} {{formatDate latestUpdate}}</p>
+    </div>
+    <div class="riga">
+      <img src="img/distanza.png" class="icon-list pull-left" />
+      <p class="testo pull-left">{{distance}} km from you</p>
+    </div>
+  </div>
+</li>

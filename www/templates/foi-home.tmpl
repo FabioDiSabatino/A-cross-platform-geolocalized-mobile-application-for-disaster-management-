@@ -1,0 +1,19 @@
+<div>
+  <span class="media-body marg-left">Most severe status of friends</span>
+  <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+    <li class="ui-li-static ui-body-inherit ui-li-has-thumb">
+      <img src="{{picture}}" />
+      <h3>{{escapeName name}}</h3>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          <img src="img/statuses/{{statusIconName status}}.png" class="banner-foi-icon" id="c{{status}}" />
+          <p class="banner-foi-text">{{statusName status}}</p>
+        </div>
+        <div class="ui-block-b">
+          <img src="img/device.png" class="banner-foi-icon deviceimg" />
+          <p class="banner-foi-text">{{deviceStatusName deviceStatus}} {{formatDate latestUpdate}}</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

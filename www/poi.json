@@ -1,0 +1,54 @@
+﻿[
+  {
+    "distance": 10,
+    "emergency": 3,
+    "id": 0,
+    "latestUpdate": 1461605400,
+    "name": "Home",
+    "picture": "p1",
+    "position": {
+      "zero": [ 42.36, 13.410 ],
+      "cell": [ 0, 0 ]
+    },
+    "reportNumber": 1
+  },
+  {
+    "distance": 4,
+    "emergency": 5,
+    "id": 1,
+    "latestUpdate": 1461620340,
+    "name": "Mom's home",
+    "picture": "p2",
+    "position": {
+      "zero": [ 42.36, 13.412 ],
+      "cell": [ 4, 4 ]
+    },
+    "reportNumber": 5
+  },
+  {
+    "distance": 21,
+    "emergency": 0,
+    "id": 2,
+    "latestUpdate": 1461604200,
+    "name": "Office",
+    "picture": "p3",
+    "position": {
+      "zero": [ 42.368, 13.350 ],
+      "cell": [ 2, 4 ]
+    },
+    "reportNumber": 10
+  },
+  {
+    "distance": 50,
+    "emergency": 6,
+    "id": 3,
+    "latestUpdate": 1461622860,
+    "name": "Antonio's home",
+    "picture": "p4",
+    "position": {
+      "zero": [ 42.368, 13.359 ],
+      "cell": [ 4, 4 ]
+    },
+    "reportNumber": 22
+  }
+]

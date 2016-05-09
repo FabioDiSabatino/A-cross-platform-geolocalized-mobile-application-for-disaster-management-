@@ -1,0 +1,148 @@
+#content-foi {
+    margin-top: 12px;
+    height: calc(100% - 94px);
+}
+
+.icon-caret {
+    font-size: 30px !important;
+}
+
+.filtri {
+    margin-top: 58px;
+}
+
+.check-filtro {
+    visibility: hidden;
+}
+
+.check-filtro.active {
+    visibility: visible;
+}
+
+.profile {
+    width: 60px;
+    margin-top: 10px;
+    margin-left: -10px;
+    margin-right: 20px !important;
+}
+
+.dati {
+    height: 70px;
+}
+
+.icon-list {
+    height: 25px;
+    background-color: #343232;
+    border-radius: 50%;
+}
+
+.nome {
+    margin-left: -10px;
+}
+
+.testo {
+    font-size: 12px;
+    color: black;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.device {
+    height: 26px;
+    background-color: #343232;
+    border-radius: 50%;
+}
+
+.riga {
+    height: 30px;
+}
+
+.riga:not(:last-of-type) {
+    margin-bottom:2px;
+}
+
+.lista-stato {
+    border-radius: 50%;
+}
+
+.testostato {
+    margin-top: 6px;
+}
+
+.riga-stato {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+
+#map-foi {
+    height: 100%;
+}
+
+.mappa-foi-content {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+    border-radius: 0 !important;
+    width: 100%;
+    height: 100%;
+}
+
+.bolded {
+    font-weight: bold;
+    color: black;
+}
+
+.input-ind-foi {
+    height: 10%;
+}
+
+.foiCluster {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-align: center;
+    border-radius: 15px;
+    font: 30px "Helvetica Neue", Arial, Helvetica, sans-serif;
+    background-color: #0088bb;
+    color: white;
+}
+
+.leaflet-marker-icon {
+    border-radius: 50%;
+}
+
+#content-poi{
+	margin-top:12px;
+	height:calc(100% - 94px)
+}
+.signal-number{
+	width:25px;
+	height:25px;
+	background-color: #343232;
+	border-radius:50%;
+	color:white;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+#map-poi {
+    height: 100%;
+}
+
+.mappa-poi-content {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+    border-radius: 0 !important;
+    width: 100%;
+    height: 100%;
+}
+
+.input-ind-poi {
+    height: 10%;
+}
+

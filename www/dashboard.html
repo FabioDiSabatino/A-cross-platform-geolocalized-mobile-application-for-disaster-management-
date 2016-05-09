@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="content" id="dashboard">
+        <header class="bar bar-nav header">
+            <a class="icon icon-gear pull-right"></a>
+            <h2 class="title title-header">HelpMe</h2>
+        </header>
+        <div class="content-widget">
+            <div id="blocco">
+                <div class="notifiche white">
+                    <div id="foi-most-serious"></div>
+                    <div class="ui-grid-a button-main white ">
+                        <div class="widget pull-left ui-block-a ">
+                            <div class="btn btn-block button-dashboard pull-left" id="comestai-button">
+                                <img src="img/howareyou.png" class="imgbutton" />
+                                <div class="textbutton yellow">How are you?</div>
+                            </div>
+                        </div>
+                        <div class="widget ui-block-b poi">
+                            <div class="btn btn-block button-dashboard pull-right" id="segnala-button">
+                                <img src="img/signalevent.png" class="imgbutton" />
+                                <div class="textbutton red">Signal event</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news white">
+                        <div class="title-notifica official">
+                            <span class="media-body marg-left">Official news</span>
+                            <span class="badge badge_verde marg-right pull-right">2</span>
+                        </div>
+                        <div class="content-notifica official">
+                            <div class="ui-grid-a grid-news">
+                                <div class="ui-block-a block-news left">
+                                    <img src="img/news.png" class="imgnews" />
+                                </div>
+                                <div class="ui-block-b block-news right">
+                                    <header class="title-news"></header>
+                                    <p class="content-news"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="bar bar-tab">
+                <a class="tab-item block-widget">
+                    <img class="widget-image" id="foi" src="img/family.png" />
+                    <div class="notification notify-foi alert">
+                        <p class="noti-text">3</p>
+                    </div>
+                </a>
+                <a class="tab-item">
+                    <img class="widget-image" id="poi" src="img/poi.png" />
+                    <div class="notification notify-poi quiet">
+                        <p class="noti-text">1</p>
+                    </div>
+                </a>
+                <a class="tab-item">
+                    <img class="widget-image" id="map-widget" src="img/map.png" />
+                </a>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>

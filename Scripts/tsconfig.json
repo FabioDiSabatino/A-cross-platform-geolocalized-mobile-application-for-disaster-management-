@@ -1,0 +1,19 @@
+﻿{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "outDir": "../www/js/",
+    "emitBOM": false,
+    "newLine": "CRLF",
+    "noImplicitReturns": true,
+    "inlineSources": true
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}

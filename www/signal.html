@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    <div class="content" id="signal">
+        <header class="bar bar-nav header">
+            <span class="icon pull-left back icon-home" id="back-from-signal"></span>
+            <h1 class="title">Signal emergency</h1>
+            <a class="ui-link icon pull-right" id="camera">
+                <img src="img/camera.png" class="icon-camera" />
+            </a>
+        </header>
+        <ul class="table-view ultima" id="emergencies">
+            <li class="table-view-cell cell-signal" data-emergency="0">
+                <div class="ui-grid-a icon-block">
+                    <div class="ui-block-a text-block">
+                        <p class="pull-left text-signal" id="text-first">Collapsed building</p>
+                    </div>
+                    <div class="ui-block-b">
+                        <img src="img/emergencies/CollapsedBuilding.png" class="pull-right icon-signal" />
+                    </div>
+                </div>
+            </li>
+            <li class="table-view-cell cell-signal" data-emergency="1">
+                <div class="ui-grid-a icon-block">
+                    <div class="ui-block-a text-block">
+                        <p class="pull-left text-signal">Fire</p>
+                    </div>
+                    <div class="ui-block-b">
+                        <img src="img/emergencies/Fire.png" class="pull-right icon-signal" />
+                    </div>
+                </div>
+            </li>
+            <li class="table-view-cell cell-signal" data-emergency="2">
+                <div class="ui-grid-a icon-block">
+                    <div class="ui-block-a text-block">
+                        <p class="pull-left text-signal">Flooding</p>
+                    </div>
+                    <div class="ui-block-b">
+                        <img src="img/emergencies/Flooding.png" class="pull-right icon-signal" />
+                    </div>
+                </div>
+            </li>
+            <li class="table-view-cell cell-signal" data-emergency="3">
+                <div class="ui-grid-a icon-block">
+                    <div class="ui-block-a text-block">
+                        <p class="pull-left text-signal">Road interruption</p>
+                    </div>
+                    <div class="ui-block-b">
+                        <img src="img/emergencies/RoadInterruption.png" class="pull-right icon-signal" />
+                    </div>
+                </div>
+            </li>
+            <li class="table-view-cell cell-signal" data-emergency="4">
+                <div class="ui-grid-a icon-block">
+                    <div class="ui-block-a text-block">
+                        <p class="pull-left text-signal">Trapped person</p>
+                    </div>
+                    <div class="ui-block-b">
+                        <img src="img/emergencies/TrappedPerson.png" class="pull-right icon-signal" />
+                    </div>
+                </div>
+            </li>
+            <li class="table-view-cell cell-signal" data-emergency="5">
+                <div class="ui-grid-a icon-block">
+                    <div class="ui-block-a text-block">
+                        <p class="pull-left text-signal">Injured person</p>
+                    </div>
+                    <div class="ui-block-b">
+                        <img src="img/emergencies/InjuriedPerson.png" class="pull-right icon-signal" />
+                    </div>
+                </div>
+            </li>
+            <li class="table-view-cell cell-signal" data-emergency="6">
+                <div class="ui-grid-a icon-block">
+                    <div class="ui-block-a text-block">
+                        <p class="pull-left text-signal text-long long">Non self-sufficient person</p>
+                    </div>
+                    <div class="ui-block-b">
+                        <img src="img/emergencies/NonSelfSufficientPerson.png" class="pull-right icon-signal" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <a href="#mymodal" class="btn bottom hidden" id="send-signal" >Send signal</a>
+        <div id="mymodal" class="modal">
+            <header class="bar bar-nav header">
+                <a class="icon icon-close pull-right" id="reset" href="#mymodal"></a>
+                <h1 class="title">Where is the emergency ?</h1>
+            </header>
+            <div class="content">
+                <ul class="table-view table-modal ">
+                    <li class="table-view-cell posizione">
+                        <span class="navigate-right myposition ">
+                            <a href="#gratef">Use my position</a>
+                        </span>
+                    </li>
+                    <li class="table-view-cell ">
+                        <span class="navigate-right" id="map">
+                            Locate on the map
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div id="gratef" class="modal">
+                <header class="bar bar-nav header">
+                    <a class="icon icon-close pull-right" id="closed"></a>
+                    <h1 class="title">Well done!!</h1>
+                </header>
+                <div class="content">
+                    <p id="grateful">thanks for your help, the whole community is grateful</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿[
+  {
+    "device": 2,
+    "distance": 3,
+    "id": 393479455999,
+    "lastSeen": 1461924240,
+    "latestUpdate": 1461920640,
+    "position": {
+      "zero": [ 42.36, 13.412 ],
+      "cell": [ 0, 0 ]
+    },
+    "status": 1
+  },
+  {
+    "device": 0,
+    "distance": 15,
+    "id": 393335868788,
+    "lastSeen": 1461924000,
+    "latestUpdate": 1461834240,
+    "position": {
+      "zero": [ 42.35, 13.409 ],
+      "cell": [ 4, 4 ]
+    },
+    "status": 0
+  },
+  {
+    "device": 1,
+    "distance": 18,
+    "id": 393356845020,
+    "latestUpdate": 1461934620,
+    "position": {
+      "zero": [ 42.36, 13.410 ],
+      "cell": [ 3, 3 ]
+    },
+    "status": 3
+  },
+  {
+    "device": 0,
+    "distance": 45,
+    "id": 393927211522,
+    "lastSeen": 1461848220,
+    "latestUpdate": 1461848220,
+    "position": {
+      "zero": [ 42.373, 13.353 ],
+      "cell": [ 3, 3 ]
+    },
+    "status": 4
+  },
+  {
+    "device": 0,
+    "distance": 29,
+    "id": 3407896364,
+    "lastSeen": 1461823020,
+    "latestUpdate": 1461823020,
+    "position": {
+      "zero": [ 42.374, 13.353 ],
+      "cell": [ 1, 3 ]
+    },
+    "status": 2
+  }
+]

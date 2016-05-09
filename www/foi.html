@@ -3,44 +3,34 @@
 <body>
     <div class="content" id="foi">
         <header class="bar bar-nav header">
-            <span class="icon pull-left back icon-home " id="back-from-foi"></span>
-            <a href="#myPopover">
-                <h2 class="title following_title title-header" id="titleNavigation">
-                    Family and friend
-                    <span class="icon icon-caret"></span>
-                </h2>
+            <span class="icon pull-left back icon-home" id="back-from-foi"></span>
+            <a class="title" id="foi-popup">
+                Family and friend
+                <span class="icon icon-caret"></span>
             </a>
         </header>
-        <div id="myPopover" class="popover">
-            <header class="bar bar-nav header-popup">
-                <h1 class="title titolo-filtri ">Order by:</h1>
-            </header>
+        <div data-role="popup" id="popupMenu">
             <ul class="table-view">
-                <li class="table-view-cell latest">
-                    <a class="ui-link">
-                        <span class="media-object pull-left icon icon-check check-filtro check-latest"></span>
-                        Latest
-                    </a>
+                <li class="table-view-divider" id="filters-title">Order By:</li>
+                <li class="table-view-cell" id="foi-latest">
+                    <span class="media-object pull-left icon icon-check check-filtro" id="check-latest"></span>
+                    Latest
                 </li>
-                <li class="table-view-cell nearest">
-                    <a class="ui-link">
-                        <span class="media-object pull-left icon icon-check check-filtro check-latest"></span>
-                        Nearest
-                    </a>
+                <li class="table-view-cell" id="foi-nearest">
+                    <span class="media-object pull-left icon icon-check check-filtro" id="check-nearest"></span>
+                    Nearest
                 </li>
-                <li class="table-view-cell seriousness">
-                    <a class="ui-link">
-                        <span class="media-object pull-left icon icon-check check-filtro check-latest"></span>
-                        Seriousness
-                    </a>
+                <li class="table-view-cell" id="foi-seriousness">
+                    <span class="media-object pull-left icon icon-check check-filtro check-latest" id="check-seriousness"></span>
+                    Seriousness
                 </li>
             </ul>
         </div>
         <div class="segmented-control filtri">
-            <a class="control-item active lista-foi">List</a>
-            <a class="control-item mappa-foi">Map</a>
+            <a id="lista-foi" class="control-item active">List</a>
+            <a id="mappa-foi" class="control-item">Map</a>
         </div>
-        <div class="content-foi"></div>
+        <div id="content-foi"></div>
     </div>
 </body>
 </html>

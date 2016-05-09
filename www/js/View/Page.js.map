@@ -1,0 +1,1 @@
+{"version":3,"file":"Page.js","sourceRoot":"","sources":["../../../scripts/View/Page.ts"],"names":[],"mappings":"AAAC,IAAU,IAAI,CAKd;AALA,WAAU,IAAI,EAAC,CAAC;IACb,YAAY,CAAC;AAIjB,CAAC,EALU,IAAI,KAAJ,IAAI,QAKd","sourcesContent":["﻿namespace View {\r\n    \"use strict\";\r\n    export interface IPage {\r\n        initialize(): void;\r\n    }\r\n}"]}

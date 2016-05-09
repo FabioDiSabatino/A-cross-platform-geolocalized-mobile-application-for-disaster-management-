@@ -1,21 +1,20 @@
-/** Classe utilizzata per il recupero di informazioni sul dispositivo 
- * 	come dimensione, stato ect ...
- */
-
-var cdevice={
-info:{},
-getInfo:function(){
-	
-	this.info={
-			ratio:window.devicePixelRatio, //ancomment when build 
-			height:screen.height,// /window.devicePixelRatio,
-			width:screen.width,// /window.devicePixelRatio,
-			platform:device.platform,
-			orientation:window.orientation
-			
-	}
-	return this.info;
-   }
-}
-
-
+var Controller;
+(function (Controller) {
+    "use strict";
+    var Device = (function () {
+        function Device() {
+        }
+        Device.getInfo = function () {
+            return {
+                ratio: window.devicePixelRatio,
+                height: screen.height,
+                width: screen.width,
+                platform: device.platform,
+                orientation: window.orientation
+            };
+        };
+        return Device;
+    }());
+    Controller.Device = Device;
+})(Controller || (Controller = {}));
+//# sourceMappingURL=Cdevice.js.map

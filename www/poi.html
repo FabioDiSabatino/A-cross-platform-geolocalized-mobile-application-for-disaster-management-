@@ -4,47 +4,37 @@
     <div class="content" id="poi">
         <header class="bar bar-nav header">
             <span class="icon pull-left back icon-home" id="back-from-poi"></span>
-            <a href="#myPopover">
-                <h1 class="title following_title title-header" id="titleNavigation">
-                    Point of interest
-                    <span class="icon icon-caret"></span>
-                </h1>
+            <a class="title" id="foi-popup">
+                Point of interest
+                <span class="icon icon-caret"></span>
             </a>
         </header>
-        <div id="myPopover" class="popover">
-            <header class="bar bar-nav header-popup ">
-                <h1 class="title titolo-filtri ">Order by:</h1>
-            </header>
+        <div data-role="popup" id="popupMenu">
             <ul class="table-view">
-                <li class="table-view-cell latest">
-                    <a class="ui-link">
-                        <span class="media-object pull-left icon icon-check check-filtro active check-latest"></span>
-                        Latest
-                    </a>
+                <li class="table-view-divider" id="filters-title">Order By:</li>
+                <li class="table-view-cell" id="poi-latest">
+                    <span class="media-object pull-left icon icon-check check-filtro" id="check-latest"></span>
+                    Latest
                 </li>
-                <li class="table-view-cell nearest">
-                    <a class="ui-link">
-                        <span class="media-object pull-left icon icon-check check-filtro  check-nearest"></span>
-                        Nearest
-                    </a>
+                <li class="table-view-cell" id="poi-nearest">
+                    <span class="media-object pull-left icon icon-check check-filtro" id="check-nearest"></span>
+                    Nearest
                 </li>
-                <li class="table-view-cell number">
-                    <a class="ui-link">
-                        <span class="media-object pull-left icon icon-check check-filtro check-number"></span>
-                        Signal
-                    </a>
+                <li class="table-view-cell" id="poi-report-number">
+                    <span class="media-object pull-left icon icon-check check-filtro check-latest" id="check-number"></span>
+                    Report Number
                 </li>
             </ul>
         </div>
         <div class="segmented-control filtri">
-            <a class="control-item active lista-poi">
+            <a id="lista-poi" class="control-item active">
                 List
             </a>
-            <a class="control-item mappa-poi">
+            <a id="mappa-poi" class="control-item">
                 Map
             </a>
         </div>
-        <div class="content-poi">
+        <div id="content-poi">
         </div>
     </div>
 </body>

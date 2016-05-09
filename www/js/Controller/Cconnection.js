@@ -1,38 +1,43 @@
-var cconnection = {
-    request_time: 0,
-    checkConnection: function (x) {
-        for (i = 1; i < x + 1; i++) {
-            var start_time = new Date().getTime();
-            $.ajax({
-                url: 'http://c.tile.openstreetmap.fr/hot/9/' + i + '/' + i + '.png',
-                type: 'GET',
-                async: false,
-                mimeType: 'image/png',
-                cache: false,
-                accepts: 'image/webp,image/*,*/*;q=0.8',
-                success: function () {
-                    cconnection.request_time = (cconnection.request_time + (new Date().getTime() - start_time));
-                    if (i == x) {
-                        cconnection.request_time = cconnection.request_time / i;
-                        console.log('tempo medio di ' + i + ' richieste: ' + cconnection.request_time);
-                    }
-                },
-                error: function () {
-                    console.log('errore richiesta ajax')
-                }
-            });
+var Controller;
+(function (Controller) {
+    "use strict";
+    var Connection = (function () {
+        function Connection() {
+            this.request_time = 0;
         }
-    },
-    clearCache: function () {
-        /* var success = function(status) {
-             alert('cache pulita');
-         }
-    
-         var error = function(status) {
-             alert('Errore nella pulizia..');
-         }
-    
-         window.cache.clear( success, error );*/
-        offlineLayer.redraw();
-    }
-}
+        Connection.prototype.checkConnection = function (x) {
+            var _this = this;
+            var _loop_1 = function(i) {
+                var start_time = new Date().getTime();
+                $.ajax({
+                    url: "http://c.tile.openstreetmap.fr/hot/9/" + i + "/" + i + ".png",
+                    type: "GET",
+                    async: false,
+                    mimeType: "image/png",
+                    cache: false,
+                    accepts: "image/webp,image/*,*/*;q=0.8",
+                    success: function () {
+                        _this.request_time += (new Date().getTime() - start_time);
+                        if (i === x) {
+                            _this.request_time = _this.request_time / i;
+                            console.log("tempo medio di " + i + " richieste: " + _this.request_time);
+                        }
+                    },
+                    error: function () {
+                        console.log("errore richiesta ajax");
+                    }
+                });
+            };
+            for (var i = 1; i < x + 1; ++i) {
+                _loop_1(i);
+            }
+        };
+        ;
+        Connection.prototype.clearCache = function (offlineLayer) {
+            offlineLayer.redraw();
+        };
+        return Connection;
+    }());
+    Controller.Connection = Connection;
+})(Controller || (Controller = {}));
+//# sourceMappingURL=Cconnection.js.map

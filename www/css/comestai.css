@@ -1,121 +1,64 @@
-.title-page{
-	height:50px;
-	
+ul#statuses {
+    margin-top: 43px;
 }
 
-.title-text{
-	font-size:1.7em;
-  margin-top:5px;
+li.cell-status {
+    height: 60px;
+    padding-right: 2px;
 }
 
-.stato{
-	margin-top:43px;
-	
+p.text-status {
+    margin-top: 10px;
+    color: black;
+    vertical-align: middle;
+    border: none;
 }
 
-.cell-stato{
-	height:60px;
-		padding-right:2px;	
+li.text-active {
+    font-weight: bold;
+    font-size: 1.3em;
 }
 
-.text-stato{
-	margin-top:10px;
-	color:black;
-
-}
-.text-stato.no-active{
-	border-color:none;
-	    background-color: white;
-
-
-
-	
+img.icon-status {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 }
 
-.icon-stato{
-	
-	height:50px;
-	width:50px;
-	border-radius:50%;
-	
-
+img#Fine {
+    border: 4px solid;
+    border-color: #00cc00;
+    background-color: #00cc00;
 }
 
-.text-first{
-	color:black;
+img#SlightlyWounded {
+    border: 4px solid;
+    border-color: #e6e600;
+    background-color: #e6e600;
 }
 
-.text-active{
-	font-style:bold;
-	font-size:1.3em;
+img#Injured {
+    border: 4px solid;
+    border-color: #FF9700;
+    background-color: #FF9700;
 }
 
-.stobene{
-	border:4px solid;
-	border-color:#00cc00;;
-	background-color:#00cc00;
-	
-}
-.feritolieve{
-	border:4px solid;
-	border-color:#e6e600;
-	background-color: #e6e600;
-	
-}
-.ferito{
-		border:4px solid;
-	border-color: #FF9700;
-	background-color: #FF9700;
-
-}
-.intrapplieve{
-		border:4px solid;
-	border-color:#F67827;
-	background-color:#F67827;
-	
-}
-.intrapp{
-	font-size:1.2em;
-	border:4px solid;
- border-color:#ff1a1a;
- background-color:#ff1a1a;
- 
-}
-.no-active{
-	
-  border-color: #cccccc !important;
-  background-color: #cccccc;
-
+img#Trapped {
+    border: 4px solid;
+    border-color: #F67827;
+    background-color: #F67827;
 }
 
-
-.text-intrapp{
-	margin-top:0px;
-}
-.text-med{
-	margin-top:10px;
-}
-.no-active.icon-stato{
-	border:2px solid;
+img#TrappedAndInjuried {
+    font-size: 1.2em;
+    border: 4px solid;
+    border-color: #ff1a1a;
+    background-color: #ff1a1a;
 }
 
-@media screen and (min-width: 321px){
-	.text-intrapp{
-		margin-top:10px;
-		
-	}
-	.text-intrapp.text-active{
-		margin-top:-5px;
-	}
+li.no-active img.icon-status {
+    border-color: #cccccc !important;
+    background-color: #cccccc !important;
+    border: 2px solid;
 }
-@media screen and (max-width: 320px){
-	.text-med{
-		margin-top:10px;
-	}
-	.text-med.text-active{
-		margin-top:-5px;
-	}
-	
-}
-
 
